@@ -1,0 +1,16 @@
+{
+  "author": "Bowen Zuo",
+  "edition": "1.1.0",
+  "pages": 12,
+  "pdf_sha256": "01566b268afd6896a9da4be12ca25109acf489965f0cf5402ba8fc1d5ea1d332",
+  "source_files": [
+    "paper/estimates.tex",
+    "paper/finite.tex",
+    "paper/five.tex",
+    "paper/four.tex",
+    "paper/general-cutoff.tex",
+    "paper/main.tex"
+  ],
+  "pdf_engine": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+  "source_date_epoch": 1795651200
+}

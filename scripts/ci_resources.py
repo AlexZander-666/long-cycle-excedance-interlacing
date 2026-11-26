@@ -11,6 +11,7 @@ PROFILES = {
     "FixedCutoffCubeAudit": (10, 15),
     "FixedThreeAllAudit": (20, 20),
     "FixedFourAllAudit": (20, 20),
+    "CutoffFiveFinalAudit": (12, 12),
 }
 
 

@@ -1,0 +1,54 @@
+\section{Independent weights on the short cycles}\label{sec:general}
+Fix \(k\ge3\), put \(d=k-1\), and take \(w_a\in[0,1]\) for \(2\le a<k\). Set \(w_1=0\) and \(w_a=1\) for \(a\ge k\). In this section \(F_j\) is the excedance polynomial of derangements with each cycle of length \(a\) contributing the additional factor \(w_a\). The same variables \(t=-e^{-x}\), \(p=n-1\), \(r=e^{-x}\), \(\zeta=\rho e^{\ii\theta}\), \(H_j,Y_j,V_j\) and \(Z\) as in the two-cycle case will be used with this \(F_j\).
+
+\subsection{The change in successive cycle weights}
+Define \(A_0(t)=1\) and, for \(a\ge1\),
+\[
+ M_a=\frac{tA_{a-1}(t)}{(1-t)^a},\qquad
+ b_a=\frac{(w_a-1)M_a}{a!},\qquad
+ B(z)=\exp\!\left(\sum_{a=1}^{d} b_a z^a\right).
+\]
+The labelled cycle formula gives \(\sum H_jz^j/j!=(1-t)B(z)L(z)\), with the same \(L(z)=(1+e^{z-x})^{-1}\). For \(a\ge2\) this follows by changing the single-cycle weight \(tA_{a-1}(t)\). The linear term includes deletion of fixed points: rewriting the unrestricted generating function in terms of \(L\) supplies the extra \(e^z\), and multiplication by \(e^{-z/(1-t)}\) leaves \(e^{-tz/(1-t)}\), exactly \(e^{b_1z}\). The ordinary Eulerian recurrence gives \(M'_a=-M_{a+1}\). Since \(w_{d+1}=1\), we set \(b_{d+1}=0\). It follows that
+\begin{align}
+ b'_a+(a+1)b_{a+1}&=(w_{a+1}-w_a)M_{a+1}/a! =: C_a,\\
+ H_n+H'_p&=\sum_{a=1}^{d}(p)_a C_a H_{p-a},\qquad
+ Z=\frac1n\sum_{a=1}^{d}C_a\rho^{a+1}Y_{p-a},\label{general-insertion}
+\end{align}
+where \((p)_a=p!/(p-a)!\) and \(p\ge d\). Indeed \((\partial_x+\partial_z)L=0\) and the constant term cancels as in \eqref{insert}; coefficient extraction gives both identities. In particular, when all short cycles have the same mark, only \(C_1\) and \(C_d\) can be nonzero. For \(x\ge0\), coefficient nonnegativity of the Eulerian polynomials gives
+\[
+ |A_{a-1}(-r)|\le A_{a-1}(1)=(a-1)!,\qquad
+ |b_a|\le r/a,\quad |C_a|\le r.
+\]
+All estimates below are uniform over the weight cube for the fixed \(d\).
+
+\subsection{A bounded interval}
+For the moment fix \(X\ge16\). On \(0\le x\le X\), take \(R(x)=(x^2+4\pi^2)^{1/2}\). The only poles inside \(|z|=R(x)\) are \(\zeta,\bar\zeta\). By compactness, the integrand factor \(B(z)L(z)\) is bounded on these contours, uniformly over all weights; also \(\rho/R(x)\le q<1\). Moving the coefficient contour past both poles gives
+\[
+ Y_j=2\Re\!\left(B(\zeta)e^{-\ii(j+1)\theta}\right)+O_{d,X}(q^j).
+\]
+Here \(|B(\zeta)|\) has a strictly positive uniform lower bound, and \(s=\pi/\rho\) is bounded below. At \(Y_p=0\) the real part in the leading term is \(O(q^p)\) and the magnitude of its imaginary part is at least half the lower amplitude bound for all sufficiently large \(p\). Multiplication by \(c-\ii s\) in the upper row then bounds \(|Y_n|\) away from zero. The finitely many shorter rows in \eqref{general-insertion} are uniformly bounded. Thus \(|Z|=O_{d,X}(1/n)<|Y_n|\) for all sufficiently large \(n\).
+
+\subsection{The middle interval}
+Choose \(X=X(d)\ge16\) so that \(d e^{-x}\rho^{d+4}\le1/32\) for every \(x\ge X\); this is possible by exponential decay. On \(X\le x\le3\sqrt p\), the telescoping pole bound from \eqref{bias} gives \(|V_j|\le\rho^2/2\) for all \(j\), including \(j=0\). Coefficientwise absolute values of \(B\) are bounded by the coefficients of \(\exp(\sum |b_a|z^a)\). Convolving with \(L\) yields
+\[
+ |Y_j-V_j|\le(\rho^2/2)(e^v-1),\qquad
+ v=\sum |b_a|\rho^a\le dr\rho^d.
+\]
+Since \(v<1/2\), this gives \(\rho |Y_j-V_j|\le dr\rho^{d+3}\le1/32\), and \(|Y_j|\le\rho^2\). At a zero of \(Y_p\) we have \(|V_p|<s/32\). The phase gap \eqref{center} applies because \(ns^2\ge1\). Consequently \(|Y_n|>15s/16\), while \(\rho|Z|\le dr\rho^{d+4}/n\le1/(32n)\) by \eqref{general-insertion}.
+
+\subsection{The far exterior}
+Assume \(x\ge3\sqrt p\). For fixed \(d\) and all sufficiently large \(n\) this implies \(x\ge(4d+12)\log n\). Let \(W=\max_{h\ge1}h^p r^h\) and \(S_j=\sum_{h\ge1}(-r)^hh^j\), as in the two-cycle estimate. For \(j=n,p,p-1,\ldots,p-d\), set \(T_j(h)=j![z^j]B(z)e^{hz}\). Geometric expansion of \(L\) near zero gives \(H_j/(1-t)=\sum_{h\ge0}(-r)^h T_j(h)\). For \(h\ge1\) the absolute majorant gives
+\[
+ |T_j(h)/h^j-1|\le \exp\!\left(\sum_a |b_a|(j/h)^a\right)-1
+                 \le e^{dr n^d}-1\le n^{-4}
+\]
+eventually. To bound the zero label, use the radius \(R_0=e^{x/d}\). Each \(|b_a|R_0^a\le1\), so \(|T_j(0)|\le j!e^d r^{j/d}\). For \(j\ge2d\) we have \(j/d-1\ge j/(2d)\); using \(x/(2d)\ge2\log n\), \(j!\le n^j\), and \(j\ge n-k\), we obtain \(|T_j(0)|\le rn^{-4}\) for sufficiently large \(n\). This additional factor \(r\) allows \(x\) to be arbitrarily large.
+
+The mode and tail estimates in the two-cycle exterior bound concern the unperturbed weights and hold throughout this exterior once \(n\ge512\). Write \(A_j=H_j/(1-t)\). As \(\sum h^p r^h<4W\), \(\sum h^{p+1}r^h<6nW\), and \(r\le W\), the preceding estimates give \(|A_j-S_j|\le5n^{-4}W\) for \(p-d\le j\le p\) and \(|A_n-S_n|\le7n^{-3}W\). At \(A_p=0\), recentering at the stronger neighbor \(h_0\le n\) gives \(|S_n-h_0S_p|>4W/5\), exactly as above. Hence \(|A_n|>3W/4\) eventually, and \(|A_{p-a}|\le5W\) for \(1\le a\le d\). By \eqref{general-insertion},
+\[
+ |H_n+H'_p|/(1-t)\le5d\,n^d rW<W/4
+\]
+eventually. This proves the strict sign at every predecessor zero in the exterior.
+
+\subsection{The parameter domain and the original rows}
+Choose \(N(k)>k\) above the three eventual bounds. At every size \(j\ge k\), a term with just one excedance must come from a single cycle. Its cycle length is \(j\), its weight is one, and its first Eulerian coefficient is one. Inversion again gives reciprocity. Thus throughout the cube both quotients are monic of the expected degrees, with constant term one and no nonnegative roots. For a prescribed weight vector connect it by a straight segment to the all-one vector of short-cycle weights. The sign test is uniform over this whole segment; the derangement endpoint and the transport argument in Section~\ref{transport} give strict interlacing. Adding back the two simple zeros proves weak interlacing. Setting every short-cycle weight to zero proves the assertion for the minimum cycle length \(k\).

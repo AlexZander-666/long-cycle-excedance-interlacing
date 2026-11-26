@@ -1,8 +1,14 @@
 # Interlacing of excedance polynomials with a minimum cycle length
 
-This repository accompanies Bowen Zuo's [ten-page manuscript](paper/main.pdf).
-It contains the frozen Lean 4 proofs of the four theorems, the exact
-finite witnesses, and verification records for the same edition.
+The [twelve-page revision](cutoff-five/paper/main.pdf) adds cutoff five.
+The unweighted quotients strictly interlace at every upper size $n\ge6$.
+For $n\ge49$ this also holds throughout the closed cube of independent
+weights on cycles of lengths two, three and four. The two full rows
+weakly interlace. [Cutoff-five source and reproduction](cutoff-five/README.md)
+
+The [ten-page v1.0.0 manuscript](paper/main.pdf), its four Lean theorems,
+and its exact finite witnesses remain available at the repository root.
+The commands below concern that edition. [v1.0.0 release](https://github.com/AlexZander-666/long-cycle-excedance-interlacing/releases/tag/v1.0.0)
 The upper size is $n$, and each result compares the rows at $n-1$ and $n$.
 
 The principal results are the independent-cycle-weight theorem and
@@ -95,7 +101,10 @@ larger-runner label for extra headroom or a retry. [Standard runner resources](h
 The retained full proof receipts are from an ARM64 NVIDIA DGX Spark.
 The unchanged general-cutoff proof also passed a hosted AMD64 replay of
 125 project modules and 77 declaration audits in the preceding edition.
-The workflow results for this edition are reported separately.
+The cutoff-five edition has a separate standard AMD64 workflow alongside
+the independent Spark ARM64 record. It runs the manuscript and arithmetic in
+one job and the full serial Lean closure audit in another. The AMD64 workflow
+for this edition has not yet run.
 
 ## Citation and license
 

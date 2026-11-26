@@ -1,0 +1,44 @@
+\section{Minimum cycle length four}\label{sec:four}
+We give the quantitative estimates for Theorem~\ref{four}. Use the notation of Section~\ref{sec:general} with \(d=3\). The two marks can vary throughout the closed square. The three coefficients of \(\log B(z)\) are
+\[
+ b_1=\frac r{1+r},\qquad
+ b_2=\frac{(1-w_2)r}{2(1+r)^2},\qquad
+ b_3=\frac{(1-w_3)r(1-r)}{6(1+r)^3}.
+\]
+They lie in \([0,1/2],[0,1/8],[0,1/24]\) and are also bounded by \(r,r/2,r/6\). In \eqref{general-insertion}, \(|C_1|,|C_2|,|C_3|\) satisfy the same latter bounds, since \(|1-4r+r^2|\le(1+r)^4\) on \([0,1]\). In particular the sign of \(w_3-w_2\) is unrestricted. In the three estimates below \(n\ge512\), \(p=n-1\), and the smallest coefficient index used is \(n-4\ge508\).
+
+\paragraph{Compact interval.}
+Write \(D=|B(\zeta)|\). Since \(\Re(\zeta^3)=x^3-3\pi^2x\ge-2\pi^3\), one has \(D\ge\exp(-\pi^2/8-\pi^3/12)>e^{-5}\).
+The contour argument of \eqref{poles} bounds the absolute error in \(Y_j\) after retaining the nearest pole pair by \(170\exp(\sum b_i R^i)(\rho/R)^j\). The following upper bounds hold in the indicated order:
+\[
+\begin{array}{c|ccc}
+x & R & \rho/R & \sum b_iR^i\\ \hline
+{[0,4]}&8&7/10&34\\
+{[4,8]}&11&9/10&6\\
+{[8,16]}&18&24/25&1
+\end{array}
+\]
+For the radii and ratios square both sides and use \(3<\pi<16/5\). For the first cost use the absolute bounds on \(b_i\); on the other intervals use \(r(R+R^2/2+R^3/6)\) with \(r\le e^{-4},e^{-8}\), respectively. At \(j\ge508\) each error is below \(10^{-6}<sD/16\), where \(s=\pi/\rho>3/17\). At \(Y_p=0\) the real part of \(B(\zeta)(\rho/\zeta)^n\) has absolute value below \(sD/32\). Rotating by \(\rho/\zeta\) thus gives \(|Y_n|>3sD/2\), while all three shorter rows have absolute value below \(3D\). For \(2\le h\le4\) one has \(r\rho^h\le\pi^h\), because the logarithmic derivative of \(e^{-x}\rho^h\) is at most \(-1+h/(2\pi)<0\). Hence
+\[
+ |Z|\le\frac{3D}{512}(\pi^2+\pi^3/2+\pi^4/6)
+ < \frac9{34}D < \frac32sD .
+\]
+
+\paragraph{Middle interval.}
+For \(16\le x\le3\sqrt p\), \(\rho\le33x/32\) and \(r\rho^6\le(33/2)^6e^{-16}<16/5\). Indeed \(x^6 e^{-x}\) decreases here. The tilt cost \(v=\sum b_i\rho^i\) and the drift sum \(J=\sum |C_i|\rho^{i+1}\) satisfy \(v\le(21/100)r\rho^3,\ J\le(21/100)r\rho^4\), using \(\rho\ge16\). The logistic coefficients satisfy \(|V_j|\le\rho^2/2\) for every \(j\), by the pole mass estimate (including \(V_0\)). Convolution gives \(|Y_j-V_j|\le(\rho^2/2)(e^v-1)\le\rho^2v<s/4\) as \(v\rho^3<27/40<\pi/4\). At \(Y_p=0\), \eqref{center} applies since \(ns^2\ge1\) and \(|V_p|<s/4\le1/4\); it yields \(|V_n-(x/\rho)V_p|>s\), so \(|Y_n|>s/2\). Every shorter row is bounded by \(3\rho^2/5\). Consequently \(n|Z|\le(3/5)(21/100)r\rho^6<1/2\le ns/2\).
+
+\paragraph{Exterior.}
+For \(x\ge3\sqrt p\) we have \(r n^8\le1\) as in the two-cycle case. In the expansion \(A_j=H_j/(1-t)=\sum_{h\ge0}(-r)^h T_j(h)\), one has \(T_j(h)=j![z^j]B(z)e^{hz}\). For \(h\ge1,\ j\le n\), the relative error \(|T_j(h)/h^j-1|\) is bounded by \(\exp(r(n+n^2/2+n^3/6))-1<n^{-4}\), using falling factorials bounded by the corresponding powers of \(j\). For the zero label take \(R_0=e^{x/3}\ge n^2\); Cauchy's estimate gives \(|T_j(0)|\le j!e^3 R_0^{-j}\le r n^{-4}\), because \(j+5\le2(j-3)\) for the indices here. Write \(W=\max_{h\ge1}h^p r^h\), \(S_j=\sum_{h\ge1}(-r)^h h^j\).
+For \(p-3\le j\le n\) the moment estimates from the preceding exterior argument give \(|A_j-S_j|\le W/(8n)\): the positive-label sums are bounded by \(6nW\) for \(j\le p+1\), and \(r\le W\). At \(A_p=0\), subtracting the stronger neighbor index times \(S_p\) as before gives \(|A_n|>W/4\). For the three preceding indices \(|S_j|\le W\) by the alternating unimodal sum, hence \(|A_j|<2W\). The insertion in raw coordinates is bounded by \(6W r n^3<W/4\). This completes the derivative sign test on the square. The same path to the all-one derangement row and the same reflection argument now give strict interlacing of the quotients throughout that square.
+
+\paragraph{Remaining original rows.}
+At \(w_2=w_3=0\) the original row recurrence has short-cycle term \(\binom{n-1}{3}t(1+4t+t^2)E_{n-4,4}\), since the six cyclic orderings on four given letters have excedance polynomial \(t+4t^2+t^3\). In the gamma coordinates of Section~\ref{finite}, start with \(G_1=G_2=G_3=0,\ G_4=1+2y\). For \(n\ge5\),
+\[
+ G_n=(1+2(n-3)y)G_{n-1}+y(1-4y)G'_{n-1}
+       +\binom{n-1}{3}y(1+2y)G_{n-4}.
+\]
+The constant term is one and the degree is \(\lfloor(n-2)/2\rfloor\) by the same top-coefficient argument. The supplementary dyadic certificate checks the 507 adjacent pairs between rows 4 and 511; counting the base row, these use 64,770 disjoint within-row brackets and 129,540 integer endpoint signs. One checker uses the gamma recurrence and the other reconstructs the ordinary rows before extracting their gamma coefficients. Degrees, interval order, reflection and the central root are handled exactly as in Section~\ref{finite}. This proves Theorem~\ref{four}.
+
+\begingroup\raggedright
+Theorem~\ref{four} uses \texttt{LongCycleBounds/FixedFourAllSizes.lean} for the original rows and \texttt{LongCycleBounds/FixedFourVerified.lean} for the weighted result. The finite witnesses and their Python checkers are in \texttt{certificates/k3/} and \texttt{certificates/k4/}. The local Lean build, kernel replay, and axiom audit records are indexed in \texttt{verification/README.md}.
+\par\endgroup
