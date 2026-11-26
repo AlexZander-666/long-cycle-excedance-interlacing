@@ -1,0 +1,13 @@
+declaration	transitive_axioms
+LongCycleBounds.FixedFour.independent_weights	Classical.choice, Quot.sound, propext
+LongCycleBounds.FixedFour.normalized_sign	Classical.choice, Quot.sound, propext
+LongCycleBounds.FixedFour.original	Classical.choice, Quot.sound, propext
+LongCycleBounds.fixed_four_all_sizes	Classical.choice, Quot.sound, propext
+LongCycleFinite.K4.Data.range0508_0511	Classical.choice, Quot.sound, propext
+LongCycleFinite.K4.Data.seeds	Classical.choice, Quot.sound, propext
+LongCycleFinite.K4.finite_original_5_511	Classical.choice, Quot.sound, propext
+LongCycleFinite.K4.gammaRow_next_of_eq	Quot.sound, propext
+LongCycleFinite.K4.gammaRow_original	Classical.choice, Quot.sound, propext
+LongCycleFinite.K4.original_of_certificates	Classical.choice, Quot.sound, propext
+LongCycleFinite.K4.rowAtOK_of_natural	Classical.choice, Quot.sound, propext
+LongCycleFinite.original_pair_of_gamma_checks	Classical.choice, Quot.sound, propext

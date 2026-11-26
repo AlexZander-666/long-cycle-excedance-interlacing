@@ -1,0 +1,101 @@
+name: Reproduce
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      lean_runner:
+        description: "Optional AMD64 runner label to retry the Lean audits"
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Verify the frozen release and both finite proof ranges
+        run: |
+          python3 -B scripts/check_release.py
+          python3 -B certificates/k3/verify.py certificates/k3/certificate.txt.gz --last 511
+          python3 -B certificates/k4/verify.py certificates/k4/certificate.txt.gz --last 511
+      - name: Install pdfLaTeX and PDF utilities
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-fonts-recommended poppler-utils
+      - name: Rebuild the ten-page paper
+        run: python3 -B scripts/check_paper.py
+
+  lean:
+    runs-on: ${{ inputs.lean_runner || 'ubuntu-24.04' }}
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        audit: [FixedCutoffCubeAudit, FixedThreeAllAudit, FixedFourAllAudit]
+    env:
+      LEAN_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Prepare bounded workspace and swap
+        env:
+          AUDIT: ${{ matrix.audit }}
+        run: |
+          test "$(uname -m)" = x86_64
+          python3 -B scripts/check_release.py
+          df -h "${RUNNER_TEMP}"
+          if [[ "${RUNNER_ENVIRONMENT}" == github-hosted ]] &&
+             (( $(df -Pk "${RUNNER_TEMP}" | awk 'NR == 2 {print $4}') < 35*1024*1024 )); then
+            sudo rm -rf -- /usr/local/lib/android /usr/share/dotnet /opt/ghc /usr/local/.ghcup
+          fi
+          swap_gib=$(python3 -B scripts/ci_resources.py "$AUDIT" "${RUNNER_TEMP}")
+          if (( swap_gib > 0 )); then
+            if [[ "${RUNNER_ENVIRONMENT}" != github-hosted ]]; then
+              printf 'Provision an additional %s GiB of swap on this runner.\n' "$swap_gib" >&2
+              exit 1
+            fi
+            swap_file="${RUNNER_TEMP}/lean-ci.swap"
+            sudo install -m 600 /dev/null "$swap_file"
+            if ! { sudo fallocate -l "${swap_gib}G" "$swap_file" &&
+                   sudo mkswap "$swap_file" && sudo swapon "$swap_file"; }; then
+              sudo dd if=/dev/zero of="$swap_file" bs=1M count="$((swap_gib*1024))" status=none
+              sudo mkswap "$swap_file"
+              sudo swapon "$swap_file"
+            fi
+          fi
+          free -h
+          df -h "${RUNNER_TEMP}"
+      - uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64 # v1.7.0
+        with:
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-github-cache: false
+          use-mathlib-cache: false
+      - name: Rebuild and replay the selected Lean audit from source
+        env:
+          AUDIT: ${{ matrix.audit }}
+          TMPDIR: ${{ runner.temp }}
+        run: |
+          if [[ "$(ulimit -Hn)" == unlimited ]] || (( $(ulimit -Hn) >= 65536 )); then
+            ulimit -Sn 65536
+          fi
+          elan toolchain install "$(cat lean-toolchain)"
+          lean_bin=$(dirname "$(elan which lean)")
+          PATH="$lean_bin:$PATH" python3 -Bu scripts/verify_lean.py . "$AUDIT" --serial

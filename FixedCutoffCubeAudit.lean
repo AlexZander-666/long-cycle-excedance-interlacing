@@ -1,0 +1,156 @@
+import LongCycleBounds.FixedCutoffCubeVerified
+
+#check LongCycleBounds.FixedCutoff.fixed_cutoff_independent_weights
+#print axioms LongCycleBounds.FixedCutoff.fixed_cutoff_independent_weights
+#check LongCycleBounds.FixedCutoff.fixed_cutoff_eventual_original
+#print axioms LongCycleBounds.FixedCutoff.fixed_cutoff_eventual_original
+#check LongCycleBounds.FixedCutoff.fixed_cutoff_marked_and_original
+#print axioms LongCycleBounds.FixedCutoff.fixed_cutoff_marked_and_original
+#check LongCycleBounds.CycleProfile.row_zero
+#print axioms LongCycleBounds.CycleProfile.row_zero
+#check LongCycleBounds.CycleProfile.row_one
+#print axioms LongCycleBounds.CycleProfile.row_one
+#check LongCycleBounds.CycleProfile.row_anchored
+#print axioms LongCycleBounds.CycleProfile.row_anchored
+#check LongCycleBounds.CycleProfile.finite_tilt_support
+#print axioms LongCycleBounds.CycleProfile.finite_tilt_support
+#check LongCycleBounds.CycleProfile.driver_tilt
+#print axioms LongCycleBounds.CycleProfile.driver_tilt
+#check LongCycleBounds.CycleProfile.egf_tilt
+#print axioms LongCycleBounds.CycleProfile.egf_tilt
+#check LongCycleBounds.CycleProfile.normalized_logistic
+#print axioms LongCycleBounds.CycleProfile.normalized_logistic
+#check LongCycleBounds.CycleProfile.normalized_coefficient
+#print axioms LongCycleBounds.CycleProfile.normalized_coefficient
+#check LongCycleBounds.CycleProfile.expOf_add
+#print axioms LongCycleBounds.CycleProfile.expOf_add
+#check LongCycleBounds.CycleProfile.rescale_expOf
+#print axioms LongCycleBounds.CycleProfile.rescale_expOf
+#check LongCycleBounds.FixedCutoff.adjacent_mark_difference
+#print axioms LongCycleBounds.FixedCutoff.adjacent_mark_difference
+#check LongCycleBounds.FixedCutoff.common_mark_drift
+#print axioms LongCycleBounds.FixedCutoff.common_mark_drift
+#check LongCycleBounds.FixedCutoff.tiltCoefficient_abs
+#print axioms LongCycleBounds.FixedCutoff.tiltCoefficient_abs
+#check LongCycleBounds.FixedCutoff.factor_scaled
+#print axioms LongCycleBounds.FixedCutoff.factor_scaled
+#check LongCycleBounds.FixedCutoff.signed_tilt_bias
+#print axioms LongCycleBounds.FixedCutoff.signed_tilt_bias
+#check LongCycleBounds.CycleProfile.expOf_finiteLog
+#print axioms LongCycleBounds.CycleProfile.expOf_finiteLog
+#check LongCycleBounds.CycleProfile.bounded_logistic
+#print axioms LongCycleBounds.CycleProfile.bounded_logistic
+#check LongCycleBounds.CycleProfile.normalizedRow_zero
+#print axioms LongCycleBounds.CycleProfile.normalizedRow_zero
+#check LongCycleBounds.CycleProfile.normalizedRow_one
+#print axioms LongCycleBounds.CycleProfile.normalizedRow_one
+#check LongCycleBounds.CycleProfile.normalized_deriv_at_zero
+#print axioms LongCycleBounds.CycleProfile.normalized_deriv_at_zero
+#check LongCycleBounds.FixedCutoff.positive_label_error
+#print axioms LongCycleBounds.FixedCutoff.positive_label_error
+#check LongCycleBounds.FixedCutoff.zero_label_decay
+#print axioms LongCycleBounds.FixedCutoff.zero_label_decay
+#check LongCycleBounds.FixedCutoff.logistic_label_sum
+#print axioms LongCycleBounds.FixedCutoff.logistic_label_sum
+#check LongCycleBounds.FixedCutoff.middle_insertion_gap
+#print axioms LongCycleBounds.FixedCutoff.middle_insertion_gap
+#check LongCycleBounds.FixedCutoff.eventual_middle_budget
+#print axioms LongCycleBounds.FixedCutoff.eventual_middle_budget
+#check LongCycleBounds.FixedCutoff.middle_tilt_bias
+#print axioms LongCycleBounds.FixedCutoff.middle_tilt_bias
+#check LongCycleBounds.FixedCutoff.middle_root_gap
+#print axioms LongCycleBounds.FixedCutoff.middle_root_gap
+#check LongCycleBounds.FixedCutoff.outer_power_budget
+#print axioms LongCycleBounds.FixedCutoff.outer_power_budget
+#check LongCycleBounds.FixedCutoff.outer_positive_error
+#print axioms LongCycleBounds.FixedCutoff.outer_positive_error
+#check LongCycleBounds.FixedCutoff.outer_zero_error
+#print axioms LongCycleBounds.FixedCutoff.outer_zero_error
+#check LongCycleBounds.FixedCutoff.raw_peak_error
+#print axioms LongCycleBounds.FixedCutoff.raw_peak_error
+#check LongCycleBounds.FixedCutoff.outer_insertion_gap
+#print axioms LongCycleBounds.FixedCutoff.outer_insertion_gap
+#check LongCycleBounds.FixedCutoff.row_commonMark
+#print axioms LongCycleBounds.FixedCutoff.row_commonMark
+#check LongCycleBounds.FixedCutoff.scaled_gap_to_normalized_sign
+#print axioms LongCycleBounds.FixedCutoff.scaled_gap_to_normalized_sign
+#check LongCycleBounds.FixedCutoff.raw_gap_to_normalized_sign
+#print axioms LongCycleBounds.FixedCutoff.raw_gap_to_normalized_sign
+#check LongCycleBounds.FixedCutoff.scaled_eq_gain
+#print axioms LongCycleBounds.FixedCutoff.scaled_eq_gain
+#check LongCycleBounds.CycleProfile.quotient_endpoints
+#print axioms LongCycleBounds.CycleProfile.quotient_endpoints
+#check LongCycleBounds.CycleProfile.quotient_shape
+#print axioms LongCycleBounds.CycleProfile.quotient_shape
+#check LongCycleBounds.CycleProfile.quotient_neg_roots
+#print axioms LongCycleBounds.CycleProfile.quotient_neg_roots
+#check LongCycleBounds.CycleProfile.interlacing_of_sign
+#print axioms LongCycleBounds.CycleProfile.interlacing_of_sign
+#check LongCycleBounds.CycleProfile.row_reciprocal
+#print axioms LongCycleBounds.CycleProfile.row_reciprocal
+#check LongCycleBounds.CycleProfile.quotient_reciprocal
+#print axioms LongCycleBounds.CycleProfile.quotient_reciprocal
+#check LongCycleBounds.CycleProfile.normalizedRow_center_zero
+#print axioms LongCycleBounds.CycleProfile.normalizedRow_center_zero
+#check LongCycleBounds.CycleProfile.quotient_root_sign
+#print axioms LongCycleBounds.CycleProfile.quotient_root_sign
+#check LongCycleBounds.CycleProfile.interlacing_of_normalized_sign
+#print axioms LongCycleBounds.CycleProfile.interlacing_of_normalized_sign
+#check LongCycleBounds.CycleProfile.original_of_normalized_sign
+#print axioms LongCycleBounds.CycleProfile.original_of_normalized_sign
+#check LongCycleBounds.FixedCutoff.eventual_interlacing_of_compact
+#print axioms LongCycleBounds.FixedCutoff.eventual_interlacing_of_compact
+#check LongCycleBounds.FixedCutoff.eventual_noncompact_sign
+#print axioms LongCycleBounds.FixedCutoff.eventual_noncompact_sign
+#check LongCycleBounds.FixedCutoff.eventual_sign_of_compact
+#print axioms LongCycleBounds.FixedCutoff.eventual_sign_of_compact
+#check LongCycleBounds.FixedCutoff.compact_profile_gap_of_estimate
+#print axioms LongCycleBounds.FixedCutoff.compact_profile_gap_of_estimate
+#check LongCycleBounds.FixedCutoff.compact_phase_threshold
+#print axioms LongCycleBounds.FixedCutoff.compact_phase_threshold
+#check LongCycleBounds.CycleProfile.global_tilt
+#print axioms LongCycleBounds.CycleProfile.global_tilt
+#check LongCycleBounds.CycleProfile.tilt_x
+#print axioms LongCycleBounds.CycleProfile.tilt_x
+#check LongCycleBounds.CycleProfile.tilt_z
+#print axioms LongCycleBounds.CycleProfile.tilt_z
+#check LongCycleBounds.CycleProfile.profile_transport
+#print axioms LongCycleBounds.CycleProfile.profile_transport
+#check LongCycleBounds.CycleProfile.normalizedRow_insertion
+#print axioms LongCycleBounds.CycleProfile.normalizedRow_insertion
+#check LongCycleBounds.FixedCutoff.fixed_cutoff_noncompact
+#print axioms LongCycleBounds.FixedCutoff.fixed_cutoff_noncompact
+#check LongCycleBounds.FixedCutoff.marked_and_original_of_poles
+#print axioms LongCycleBounds.FixedCutoff.marked_and_original_of_poles
+#check LongCycleBounds.FixedCutoff.compact_ratio_bound
+#print axioms LongCycleBounds.FixedCutoff.compact_ratio_bound
+#check LongCycleBounds.FixedCutoff.compact_tail_bound
+#print axioms LongCycleBounds.FixedCutoff.compact_tail_bound
+#check LongCycleBounds.FixedCutoff.tilted_bound
+#print axioms LongCycleBounds.FixedCutoff.tilted_bound
+#check LongCycleBounds.FixedCutoff.tilt_truncation
+#print axioms LongCycleBounds.FixedCutoff.tilt_truncation
+#check LongCycleBounds.FixedCutoff.tilt_value_bounds
+#print axioms LongCycleBounds.FixedCutoff.tilt_value_bounds
+#check LongCycleBounds.FixedCutoff.compact_scaled_row_bound
+#print axioms LongCycleBounds.FixedCutoff.compact_scaled_row_bound
+#check LongCycleBounds.FixedCutoff.compact_scaled_row_uniform
+#print axioms LongCycleBounds.FixedCutoff.compact_scaled_row_uniform
+#check LongCycleBounds.FixedCutoff.actual_compact_poles
+#print axioms LongCycleBounds.FixedCutoff.actual_compact_poles
+#check LongCycleBounds.FixedCutoff.compact_gap_independent
+#print axioms LongCycleBounds.FixedCutoff.compact_gap_independent
+#check LongCycleBounds.FixedCutoff.eventual_profile_sign
+#print axioms LongCycleBounds.FixedCutoff.eventual_profile_sign
+#check LongCycleBounds.CycleProfile.weightedQuotient_shape
+#print axioms LongCycleBounds.CycleProfile.weightedQuotient_shape
+#check LongCycleBounds.CycleProfile.weightedQuotient_neg_roots
+#print axioms LongCycleBounds.CycleProfile.weightedQuotient_neg_roots
+#check LongCycleBounds.CycleProfile.row_anchorLine_one
+#print axioms LongCycleBounds.CycleProfile.row_anchorLine_one
+#check LongCycleBounds.CycleProfile.continuous_line_quotient_coeff
+#print axioms LongCycleBounds.CycleProfile.continuous_line_quotient_coeff
+#check LongCycleBounds.CycleProfile.weighted_row_sign
+#print axioms LongCycleBounds.CycleProfile.weighted_row_sign
+#check LongCycleBounds.CycleProfile.independent_interlacing_of_normalized_sign
+#print axioms LongCycleBounds.CycleProfile.independent_interlacing_of_normalized_sign

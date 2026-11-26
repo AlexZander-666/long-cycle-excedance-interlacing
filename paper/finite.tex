@@ -1,0 +1,22 @@
+\section{Finite rows at zero mark}\label{finite}
+We describe the integer inequalities completing the proof for \(4\le n\le511\). Write \(P_n=P_n(t,0)\), \(y=t/(1+t)^2\), and \(P_n=(1+t)^{n-2}G_n(y)\). Put \(G_1=G_2=0,\ G_3=1\). The original insertion recurrence \cite[Theorem~30]{rr} specializes to
+\[
+ F_n=(n-1)tF_{n-1}+t(1-t)F'_{n-1}+
+     \binom{n-1}{2}t(1+t)F_{n-3}\quad(u=0)
+\]
+with \(F_0=1,\ F_1=F_2=0\). Substitution after dividing by \(t\) gives for \(n\ge4\), with out-of-range coefficients set to zero,
+\[
+ [y^i]G_n=(i+1)[y^i]G_{n-1}
+       +2(n-1-2i)[y^{i-1}]G_{n-1}
+       +\binom{n-1}{2}[y^{i-1}]G_{n-3}.
+\]
+This follows by applying \((1+2(n-3)y)+y(1-4y)\,d/dy\) to the preceding gamma polynomial. The term of largest possible degree is positive: for even \(n\) its shift coefficient is \(2\), and for odd \(n\) the previous row already has that degree. In particular \(\deg G_n=\lfloor(n-2)/2\rfloor\) and \(G_n(0)=1\).
+
+The supplementary certificate records disjoint negative dyadic intervals for every \(G_n\), in increasing order. To verify a row, evaluate its integer polynomial at both ends of each interval using homogeneous Horner evaluation, check opposite signs, and compare successive endpoints by integer arithmetic. There are as many intervals as the degree, so they exhaust the roots and each root is simple. For each even upper index, the upper row starts and ends the alternation of the two rows' intervals. For each odd upper index, the preceding row starts it and the upper row ends it. The recurrence, degree, bracket signs and ordering can be checked without repeating the search for intervals. The 508 pairs needed here use 64,770 brackets and 129,540 endpoint signs. The supplementary file also contains the longer independent check through size 1023. A second implementation formed the ordinary \(t\)-coefficients and inverted the triangular change of basis before evaluating the same brackets.
+
+On \((-1,0)\), \(t\mapsto y\) is a strictly increasing bijection onto \((-\infty,0)\). Each gamma root gives one root on this interval and one reciprocal root on \((-\infty,-1)\). The term of highest gamma degree shows that at \(-1\) the even \(n\) row is nonzero and the odd \(n\) row has a simple root. For an even upper index the upper row lies closest to \(-1\) on either side and the predecessor has the central root; the roles reverse for odd upper indices. Thus the bracket alternation gives strict interlacing of the original quotients, including at the center. Restoring the common simple root at zero completes the proof of Theorem~\ref{main}.
+
+\paragraph{Formal verification.}
+\begingroup\raggedright
+The repository's \texttt{verification/README.md} maps Theorems~\ref{general}--\ref{four} to the Lean proofs. Under \texttt{LongCycleBounds/}, the entry modules for Theorems~\ref{general}, \ref{main}, and \ref{family} are \texttt{FixedCutoffCubeVerified.lean}, \texttt{FixedThreeAllSizes.lean}, and \texttt{MarkedHalfVerified.lean}, respectively. The \(k=12\) declarations of type \texttt{Prop} for rows \(23,24\) in \texttt{LongCycles/Statement.lean} are auxiliary specifications.
+\par\endgroup

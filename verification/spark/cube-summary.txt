@@ -1,0 +1,7 @@
+Platform: NVIDIA DGX Spark, Linux aarch64
+Lean 4.33.1, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474
+Acceptance: 121 common cold modules; 4 new cube modules
+Project modules: 125
+Declarations audited: 77
+elapsed_seconds=1369.37 peak_rss_kib=6866496 exit_code=0
+elapsed_seconds=49.29 peak_rss_kib=6817940 exit_code=0

@@ -1,0 +1,6 @@
+Platform: NVIDIA DGX Spark, Linux aarch64
+Lean 4.33.1, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474
+Acceptance: 128 authenticated analytic-tail modules; 295 modules cold in the combined project
+Project modules: 423
+Declarations audited: 12
+Strict build and kernel exit status 0 for every listed module.

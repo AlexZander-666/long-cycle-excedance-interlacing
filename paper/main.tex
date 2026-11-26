@@ -1,0 +1,111 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks,pdfauthor={Bowen Zuo},pdftitle={Interlacing of excedance polynomials with a minimum cycle length}]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\exc}{\operatorname{exc}}
+\newcommand{\ii}{\mathrm{i}}
+\allowdisplaybreaks[2]
+\title{Interlacing of excedance polynomials with a minimum cycle length}
+\author{Bowen Zuo\\[2pt]\small East China University of Science and Technology}
+\date{November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For every fixed cutoff \(k\ge3\), the excedance polynomials of derangements with independent weights in \([0,1]\) on cycles of lengths two through \(k-1\) and unit weights on longer cycles eventually interlace strictly after removing their common simple zero. The size threshold is uniform in the weights. We prove the unweighted result at cutoff four for every nondegenerate pair and give an independent proof at cutoff three. At both cutoffs the corresponding weighted families interlace from upper size 512. The proofs use comparisons at genuine predecessor roots and exact finite certificates. All four theorems are formalized in Lean~4.
+\end{abstract}
+
+\section{The statements}
+For a permutation \(\sigma\) on \([j]\), put \(\exc(\sigma)=\#\{i:i<\sigma(i)\}\), and let \(m_2(\sigma)\) be its number of cycles of length two. Set
+\[
+ F_j(t,u)=\sum_{\substack{\sigma\in\mathfrak S_j\\ \sigma(i)\ne i\ \forall i}}
+       t^{\exc(\sigma)}u^{m_2(\sigma)},\qquad
+ P_j(t,u)=F_j(t,u)/t\quad(j\ge3).
+\]
+Taking \(u=0\) retains exactly the permutations with every cycle of length at least three. Alexandersson asks about real-rootedness and consecutive interlacing for every fixed minimum cycle length \(k\ge3\) \cite{alex}. The recurrence for these rows follows also by summing the finer enumeration of Rakotoson and Rakotondrajao \cite[Theorem~30]{rr}. Brenti proves real-rootedness on individual conjugacy classes and unimodality results for restrictions on cycle lengths \cite[Theorems~3.2--3.4]{brenti}.
+For a cutoff \(k\), let \(E_{j,k}(t)\) denote the sum of \(t^{\exc(\sigma)}\) over permutations whose cycles all have length at least \(k\).
+In contemporaneous work, ProgramComputer \cite{programcomputer} proves the unweighted \(k=3\) case at every size and gives absolute bounds \(n\ge Bk^2\) and \(n\ge10^{20}\) for eventual unweighted interlacing, where \(n\) is the lower size. The latter bound works simultaneously for all admissible cutoffs. Their two-cycle theorem covers the initial pairs through upper size \(3k-1\). Our results concern independent cycle weights, all sizes at cutoff four, and formal verification. We include the independent unweighted cutoff-three proof in the same Lean development.
+\begin{theorem}\label{general}
+For every fixed integer \(k\ge3\) there is an \(N(k)>k\) such that, for all \(n\ge N(k)\), the consecutive quotients \(E_{n-1,k}/t,E_{n,k}/t\) have respectively \(n-3,n-2\) simple negative roots. Between each two consecutive roots of the upper row lies exactly one root of the lower row. Each original row has one further simple root at zero, and the full rows weakly interlace.
+
+The threshold is uniform over all choices of weights \(w_2,\ldots,w_{k-1}\in[0,1]\), when each derangement receives the product of its short-cycle weights, with unit weight for each longer cycle.
+\end{theorem}
+The proof of Theorem~\ref{general} is in Section~\ref{sec:general}. For minimum cycle length three, the finite range below the analytic threshold can be completed.
+\begin{theorem}\label{main}
+For every \(n\ge4\), the roots of \(P_{n-1}(t,0)\) and \(P_n(t,0)\) are simple and negative. If the upper row has roots \(\beta_1<\cdots<\beta_{n-2}\) and the preceding row has roots \(\alpha_1<\cdots<\alpha_{n-3}\), then \(\beta_i<\alpha_i<\beta_{i+1}\) for all \(1\le i\le n-3\). Both full polynomials have one further simple root at zero and weakly interlace.
+\end{theorem}
+\begin{theorem}\label{family}
+For \(n\ge512\), all the conclusions of Theorem~\ref{main} hold with any common mark \(u\in[0,1]\) in the two rows.
+\end{theorem}
+\begin{theorem}\label{four}
+For minimum cycle length four the consecutive quotients \(E_{n-1,4}/t,E_{n,4}/t\) strictly interlace with simple negative roots at every upper index \(n\ge5\). The full rows weakly interlace. For \(n\ge512\) the same conclusions hold when derangements receive independent weights \(w_2,w_3\in[0,1]\) for their cycles of lengths two and three, respectively, and unit weight for every longer cycle.
+\end{theorem}
+We prove Theorem~\ref{family} by a uniform sign test at actual roots. Section~\ref{finite} completes Theorem~\ref{main} using finite integer inequalities. The coefficient of \(t\) in \(F_j\) is one: every cycle contributes at least one excedance and there is exactly one \(j\)-cycle having just one excedance. For example, the latter assertion follows from the single-cycle polynomial \(tA_{j-1}(t)\), with \(A_m\) the ordinary Eulerian polynomial. Inverting a fixed-point-free permutation sends each excedance to a deficiency and preserves its cycle type. Thus \(P_j\) is reciprocal of degree \(j-2\), monic, has constant term one, and is positive on \([0,\infty)\).
+
+\section{Transport of a root sign}\label{transport}
+Let \(P,Q\) be monic of degrees \(d,d+1\). Assume their coefficients vary continuously on an interval and both polynomials are positive on \([0,\infty)\). Suppose at every real root \(r\) of \(P\) we have \(Q(r)P'(r)<0\). If \(P\) splits at one parameter, it splits throughout: splitting is closed, since the ordered real roots of a convergent sequence of monic polynomials remain bounded and a subsequential limit gives a full factorization. It is open here because every real root is simple and a disjoint sign-change interval around each persists under sufficiently small coefficient changes. At any parameter the signs of \(Q\) alternate at the \(d\) ordered roots. The signs at \(-\infty\) and at zero give the two exterior roots, hence all \(d+1\) roots, with multiplicity one.
+
+At \(u=1\) the ordinary derangement rows supply the splitting anchor. Define the auxiliary initial row \(P_2(t,1)=F_2(t,1)/t=1\). Then \(P_3(t,1)=1+t\), and for \(n\ge4\) their insertion recurrence is
+\[
+ P_n=(1+(n-2)t)P_{n-1}+t(1-t)P'_{n-1}+(n-1)tP_{n-2}.
+\]
+If \(P_{n-2}\) strictly interlaces \(P_{n-1}\), its sign at any root of \(P_{n-1}\) equals the sign of the derivative there. The two surviving terms thus both have sign opposite to that derivative, giving strict interlacing by induction.
+
+For \(t=-e^{-x}\) write \(H_j=F_j(t,u)/(1-t)^j\), and let \(p=n-1\). Primes on \(H_p\) and \(P_p\) denote differentiation with respect to \(x\) and \(t\), respectively. At a predecessor root, \(-H'_p=t^2P'_p(t,u)/(1-t)^p\). The sign
+\begin{equation}\label{goal}
+ H_n(-H'_p)>0\qquad(H_p=0,\quad x\ge0)
+\end{equation}
+therefore implies the required polynomial sign on \([-1,0)\). If \(t<-1\), reciprocal symmetry gives \(P'_p(t)=-t^{p-4}P'_p(1/t)\) at the root and \(P_n(t)=t^{n-2}P_n(1/t)\). Their product changes by a positive factor. Thus \eqref{goal} and the anchor imply Theorem~\ref{family}.
+
+\section{The normalized marked row}
+The exponential generating function for all permutations by excedances is \((1-t)/(\exp((t-1)v)-t)\). By the labelled cycle formula, deleting fixed points multiplies it by \(e^{-v}\); marking two-cycles multiplies it by \(\exp((u-1)tv^2/2)\). Substitute \(v=z/(1-t)\), and set
+\[
+ L(z)=(1+e^{z-x})^{-1},\quad B(z)=e^{az+bz^2},\qquad
+ a=\frac{-t}{1-t},\quad b=\frac{(u-1)t}{2(1-t)^2}.
+\]
+Then \(G(z)=\sum H_j z^j/j!=(1-t)B(z)L(z)\).
+The bounds \(0\le a\le\min(1/2,e^{-x})\) and \(0\le b\le\min(1/8,e^{-x}/2)\) hold for \(x\ge0\). Since \((\partial_x+\partial_z)L=0\), direct differentiation gives
+\begin{align}
+ H_n+H'_p&=p\alpha H_{n-2}+p(p-1)\beta H_{n-3},\label{insert}\\
+ \alpha&=ut/(1-t)^2,\qquad \beta=(1-u)t(1+t)/(2(1-t)^3).\nonumber
+\end{align}
+In particular \(|\alpha|,|\beta|\le e^{-x}\). Set
+\[
+ \zeta=x+\ii\pi=\rho e^{\ii\theta},\quad c=x/\rho,\quad s=\pi/\rho,\qquad
+ Y_j=\frac{\rho^{j+1}H_j}{(1-t)j!},\qquad V_j=\rho^{j+1}[z^j]L(z).
+\]
+Write \(Z=\rho^{n+1}(H_n+H'_p)/((1-t)n!)\). Equation~\eqref{insert} reads
+\[
+ Z=(\alpha\rho^2Y_{n-2}+\beta\rho^3Y_{n-3})/n .
+\]
+The inequality \(|Z|<|Y_n|\) implies \eqref{goal} at any zero of \(H_p\).
+\input{estimates}
+\input{general-cutoff}
+\input{finite}
+\input{four}
+\paragraph{Acknowledgment.}
+ChatGPT assisted with the analytic derivations, the implementation and independent replay of the formal proofs, and preparation of the manuscript.
+\begin{thebibliography}{9}
+\bibitem{alex}
+P.~Alexandersson, \emph{Real-rooted polynomials: open problems},
+\href{https://www.symmetricfunctions.com/realRootedOpenProblems.htm\#permutations-with-long-cycles}{Permutations with long cycles},
+The Symmetric Functions Catalog, 2026.
+\bibitem{programcomputer}
+ProgramComputer, \emph{Consecutive excedance zeros of permutations with a minimum cycle length}, November 2026,
+\href{https://github.com/ProgramComputer/open-math-research/blob/4da48b72ed8f92f96c2faf60e2d63d253b3b507a/topics/long-cycle-excedances/paper.tex}{Theorem~1 and the uniform bound}.
+\bibitem{brenti}
+F.~Brenti, \emph{Permutation enumeration, symmetric functions, and
+unimodality}, Pacific J. Math. \textbf{157} (1993), 1--28,
+\href{https://msp.org/pjm/1993/157-1/pjm-v157-n1-p01-s.pdf}{Theorems~3.2--3.4 and Problem~5.5}.
+\bibitem{rr}
+I.-N.~M.~Rakotoson and F.~Rakotondrajao,
+\emph{Associated Stirling Eulerian numbers and their \(q\)-analogues},
+J. Integer Seq. \textbf{28} (2025),
+\href{https://cs.uwaterloo.ca/journals/JIS/VOL28/Rakotoson/rakoto12.html}{Article 25.5.7},
+Theorem~30.
+\bibitem{dlmf}
+NIST Digital Library of Mathematical Functions,
+\href{https://dlmf.nist.gov/4.36.E2}{Eq.~4.36.2}.
+\end{thebibliography}
+\end{document}

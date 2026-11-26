@@ -1,0 +1,33 @@
+name = "root_separation"
+version = "0.1.0"
+defaultTargets = ["FixedThreeAllAudit", "FixedFourAllAudit", "FixedCutoffCubeAudit"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "0df444a360eaa60ab8c11dca51a86af692955474"
+
+
+[[lean_lib]]
+name = "Cluster"
+
+[[lean_lib]]
+name = "LongCycleBounds"
+
+[[lean_lib]]
+name = "LongCycleFinite"
+
+[[lean_lib]]
+name = "LongCycles"
+
+[[lean_lib]]
+name = "Statement"
+
+[[lean_lib]]
+name = "FixedThreeAllAudit"
+
+[[lean_lib]]
+name = "FixedFourAllAudit"
+
+[[lean_lib]]
+name = "FixedCutoffCubeAudit"

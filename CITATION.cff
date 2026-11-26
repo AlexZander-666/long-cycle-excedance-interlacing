@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this implementation or these proofs, please cite the accompanying manuscript."
+title: "Long-cycle excedance polynomial interlacing"
+type: software
+authors:
+  - family-names: Zuo
+    given-names: Bowen
+    affiliation: East China University of Science and Technology
+preferred-citation:
+  type: unpublished
+  title: "Interlacing of excedance polynomials with a minimum cycle length"
+  authors:
+    - family-names: Zuo
+      given-names: Bowen
+      affiliation: East China University of Science and Technology
+  year: 2026

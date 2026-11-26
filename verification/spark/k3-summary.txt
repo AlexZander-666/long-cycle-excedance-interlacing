@@ -1,0 +1,6 @@
+Platform: NVIDIA DGX Spark, Linux aarch64
+Lean 4.33.1, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474
+Acceptance: 282 new cold modules
+Project modules: 282
+Declarations audited: 27
+fresh_acceptance_elapsed=5216.64 max_process_rss_kib=13649248 exit_code=0
