@@ -7,7 +7,7 @@ edition, including the certificate checkers. The [license](LICENSE) and
 retain their respective copyright and license notices. Dependencies are
 obtained separately at the checked-in lock revisions.
 
-The manuscript TeX and PDF in `paper/` and `cutoff-five/paper/` are copyright Bowen Zuo,
+The manuscript TeX and PDF in `paper/`, `cutoff-five/paper/` and `cutoff-six/paper/` are copyright Bowen Zuo,
 all rights reserved. The manuscript, mathematical certificate data, and verification
 records are distributed as accompanying research material outside the
 Apache-2.0 grant for code. A separate arXiv license, when selected for the

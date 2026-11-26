@@ -1,0 +1,8 @@
+source pass 1: exit 0
+source pass 2: exit 0
+ZIP pass 1: exit 0
+ZIP pass 2: exit 0
+TeX source ZIP CRC and exact membership checked
+Fresh source and ZIP builds yield identical PDF bytes
+ea665ecdf2783c3ed1fc7eb07b7d0f44ef23b4e268d60b656b00fadeb4624c65  paper/main.pdf
+f00c4c66d99bdf17d1e064ffcbb1be46d15a5e6888e03de1793a3e8bd69a6dfa  arxiv-source.zip

@@ -1,0 +1,281 @@
+\section{An explicit threshold for independent weights}\label{sec:general}
+Fix \(k\ge3\), put \(d=k-1\), and let \(w_1=0\), \(w_a\in[0,1]\) for
+\(2\le a\le d\), and \(w_a=1\) for \(a>d\).
+In this section \(F_j\) denotes the weighted strict-excedance row from
+Theorem~\ref{general}. Use \(p=n-1\), \(r=e^{-x}\), and \(t=-r\), and retain
+\(H_j,Y_j,V_j,\rho,c,s,Z\) from Sections~\ref{transport} and~\ref{sec:normalized}.
+Throughout the section assume \(n\ge10^6d^2\). We prove \eqref{goal}
+on the intervals cut at \(12d+100\) and \(3\sqrt p\).
+
+\subsection{The normalized generating function and its insertion identity}
+Define \(A_0(t)=1\) and
+\[
+ M_a=\frac{t A_{a-1}(t)}{(1-t)^a},\qquad
+ b_a=\frac{(w_a-1)M_a}{a!},\qquad
+ B(z)=\exp\!\left(\sum_{a=1}^{d} b_a z^a\right).
+\]
+The labelled cycle formula gives \(\sum H_j z^j/j!=(1-t)B(z)L(z)\).
+For \(a\ge2\) the cycle polynomial is \(t A_{a-1}(t)\). For the linear
+term, rewriting the unrestricted generating function in terms of \(L\)
+produces an extra \(e^z\); deleting the fixed points multiplies this by
+\(e^{-z/(1-t)}\), giving \(e^{b_1z}\).
+The Eulerian recurrence gives \(M'_a=-M_{a+1}\), with differentiation
+in \(x\). In particular \(b_1=-(\log(1-t))'\), and
+\(b'_a+(a+1)b_{a+1}=(w_{a+1}-w_a)M_{a+1}/a!\), taking \(b_{d+1}=0\).
+Since \((\partial_x+\partial_z)L=0\), coefficient extraction gives
+\begin{align}
+ C_a&=(w_{a+1}-w_a)M_{a+1}/a!,\nonumber\\
+ H_n+H'_p&=\sum_{a=1}^{d}(p)_a C_a H_{p-a},
+ &Z&=\frac1n\sum_{a=1}^{d} C_a\rho^{a+1}Y_{p-a},\label{general-insertion}
+\end{align}
+where \((p)_a=p!/(p-a)!\). The constant term of
+\((\partial_x+\partial_z)\log((1-t)B)\) vanishes.
+We use \(|Z|<|Y_n|\) to prove \eqref{goal} on the first two intervals.
+
+Write \(v=V(\rho)\), \(V(R)=\sum_{a=1}^d |b_a|R^a\) and
+\(J=\sum_{a=1}^d |C_a|\rho^{a+1}\). For every \(R\ge0\) the absolute
+coefficient mass of the tilt satisfies
+\[
+ \sum_{i\ge0}|[z^i]B|R^i\le e^{V(R)} .
+\]
+Since the exponent of \(B\) has degree at most \(d\), each term in
+\(V((1+1/d)\rho)\) is at most \((1+1/d)^d<3\) times the
+corresponding term in \(V(\rho)\). Thus
+\begin{equation}\label{quadratic-dilation}
+ V((1+1/d)\rho)\le 3v .
+\end{equation}
+
+\subsection{Two bounds for the tilt}
+For all \(x\ge0\) the pole formula in Section~4 gives, when \(a\ge2\),
+\[
+ \frac{\rho^a|M_a|}{(a-1)!}
+ =|V_{a-1}|\le 2+\frac1{as^2}.
+\]
+The equality follows by the expansion of \(L\) at zero for \(x>0\)
+and by continuity at \(x=0\). For the bound, write \(\ell=2b+1\ge3\);
+then \(|c+\ii\ell s|^{-a}\le(2ab(b+1)s^2)^{-1}\) by Bernoulli's
+inequality, and \(\sum_{b\ge1}1/(b(b+1))=1\). In particular this
+bound is below 7 if \(x^2\le32a\), since \(\pi^2>9\). The bound
+applies also at order \(a+1\) under the same condition. We will use
+\begin{equation}\label{quadratic-tilt-cost}
+ v\le11(1+\log d),\qquad J\le24d,\qquad
+ x^2>32d\ \Longrightarrow\ v\le1+12d/x.
+\end{equation}
+For \(x\le8\) use the bound 7 for every nonlinear tilt order and
+every insertion order. The linear tilt costs at most
+\(\rho e^{-x}\le(x+\pi)e^{-x}<4\). This gives the first two estimates.
+The last hypothesis is impossible when \(x\le8\).
+
+For \(x\ge8\) put \(A=\min(d,\lfloor x^2/32\rfloor)\). Orders
+\(a>A\) cost at most \(7\sum_{a>A}1/a\) in \(v\) and \(7(d-A)\)
+in \(J\). For the low orders use
+\(M_a=\sum_{h\ge1}(-r)^h h^{a-1}\), absolutely convergent for \(x>0\).
+Their costs are bounded by
+\[
+ \sum_{h\ge1}\frac{e^{-hx}}h\sum_{a=1}^A\frac{(h\rho)^a}{a!},
+ \qquad
+ \rho\sum_{h\ge1} e^{-hx}\sum_{a=1}^A\frac{(h\rho)^a}{a!},
+\]
+respectively. Here \(x\le\rho\le9x/8\) and
+\(\rho-x=\pi^2/(\rho+x)\le 8/x\). For \(h\le4A/x\), complete the
+exponential and use \(h(\rho-x)\le32A/x^2\le1\). The head of
+the first sum is at most \(3(1+\log d)\) and also at most
+\(12A/x\). The head of the second is at most \(12\rho A/x\).
+For \(h>4A/x\), the truncated exponential is at most
+\(2^A e^{h\rho/2}\). Since \(\log 2<3/4\), inclusion of \(e^{-hx}\)
+leaves a bound of \(e^{-hx/5}\).
+The tails cost at most \(5/x\) and \(5\rho/x\), respectively.
+These estimates give the first two bounds of \eqref{quadratic-tilt-cost},
+using \(12\rho A/x+5\rho/x\le14A+6\). When \(x^2>32d\) one has
+\(A=d\), and the bound \(1+12d/x\) follows from the low orders alone.
+
+\subsection{A centered estimate in the compact interval}
+Write \(z_\ell=(c+\ii\ell s)^{-1}\) for odd signed \(\ell\), and
+\(D=|B(\zeta)|\), where \(\zeta=x+\ii\pi\). In particular
+\(D\ge e^{-v}>0\). For \(\nu\ge8\),
+\begin{equation}\label{quadratic-pole}
+ \sum_{b\ge1}(2b+1)|z_{2b+1}|^\nu
+ \le\frac{4}{(\nu s^2)^2}e^{-\nu s^2/2}.
+\end{equation}
+In fact, extract half the power from each summand. This part is at most
+\((1+8s^2)^{-\nu/4}\le e^{-\nu s^2/2}\), by concavity of
+\(u\mapsto\log(1+8u)\) on \([0,1]\) and \(\log9>2\).
+For the other half apply
+\((1+4b(b+1)s^2)^{\nu/8}\ge(\nu/2)b(b+1)s^2\) twice.
+The resulting bound telescopes since
+\((2b+1)/(b^2(b+1)^2)=b^{-2}-(b+1)^{-2}\).
+Also \(|z_\ell-c|\le|\ell|s\), by the identity
+\(z_\ell-c=s(s-\ii c\ell)/(c+\ii\ell s)\).
+
+Put \(\Pi_j=2\Re(B(\zeta)z_1^{j+1})\).
+We claim that
+\begin{equation}\label{quadratic-centered}
+ |Y_j-\Pi_j|< D/8\quad(n-d-1\le j\le n),\qquad
+ |(Y_n-cY_p)-(\Pi_n-c\Pi_p)|<sD/8.
+\end{equation}
+To see this, write \(B_i=[z^i]B\).
+The exact row is the convolution \(Y_j=\sum_{i=0}^{j}B_i\rho^i V_{j-i}\).
+The principal term is the corresponding sum over all \(i\ge0\)
+using the nearest pair, since \(z_1^{-1}=\zeta/\rho\).
+Use the same head \(i\le T=\lfloor n/2\rfloor\) in both rows of the
+centered difference. Each pole exponent in the ordinary head is
+\(\nu=j-i+1\ge n/3\), since \(n\ge6d\); in the centered head it is \(\nu=n-i\ge n/3\),
+with additional factor exactly \(z_\ell-c\).
+In this interval \(\rho\le64d\), so \(\nu s^2\ge2\).
+The ordinary head divided by \(D\), and the centered head divided by
+\(sD\), are each at most \(2\exp(2v-ns^2/6)\), by
+\eqref{quadratic-pole} and its conjugate. This is less than \(1/16\).
+If \(x^2\le32d\) then \(\rho^2\le40d\), so
+\(ns^2/6\ge (9\cdot10^6/240)d\), while \(2v\le22d\).
+Otherwise write \(y=d/x\ge1/62\).
+Then \(\rho^2\le2x^2\), giving \(ns^2/6\ge750000y^2\), and
+\(2v\le2+24y\). The difference exceeds \(\log32\) at \(y=1/62\)
+and is increasing thereafter.
+
+For the tail, \(|V_j|\le\rho^2\) at all nonnegative orders, by the
+pole bound above or the formula for \(V_0\). Every two-pole term
+has modulus at most two before multiplication by \(B_i\rho^i\).
+With \(R=(1+1/d)\rho\) we have
+\[
+ \sum_{i>T}|B_i|\rho^i\le e^{V(R)}(1+1/d)^{-(T+1)}.
+\]
+This includes the principal terms beyond the finite row convolution.
+Therefore either tail divided by its respective scale has bound
+\[
+ \frac{4\rho^2}{s}\exp\!\left(V(R)+v-\frac{n}{2(d+1)}\right)<1/16.
+\]
+Indeed \(4\rho^2/s<350000 d^3\) and by \eqref{quadratic-dilation}
+and \eqref{quadratic-tilt-cost} the positive exponent including the
+prefactor and \(\log16\) is less than
+\(23+3\log d+44(1+\log d)\le57d\).
+But \(n/(2(d+1))\ge10^6d/3\).
+This proves \eqref{quadratic-centered}.
+
+At \(Y_p=0\), put \(S=B(\zeta) z_1^{p+1}\).
+Then \(|\Re S|<D/16\), so \(|\Im S|>15D/16\). Since
+\(\Pi_n-c\Pi_p=2s\Im S\), the centered estimate yields
+\(|Y_n|>7sD/4\). The shorter rows in \eqref{general-insertion}
+have magnitudes below \(17D/8\). From \(\rho\le64d\) and
+\(J\le24d\) one gets \(J/s\le512d^2\). Thus \(|Z|<|Y_n|\).
+
+\subsection{The intermediate interval}
+On \(12d+100\le x\le3\sqrt p\), we have \(\rho\le4x/3\) and
+\(ns^2\ge1\). In the positive-label sums above take \(A=d\) and
+bound the whole truncated exponential by \(2^d e^{h\rho/2}\).
+This yields
+\[
+ v\le2^{d+1}e^{-x/3},\qquad J\le\rho\,2^{d+1}e^{-x/3},\qquad
+ \rho^3 2^{d+1}e^{-x/3}<1/32 .
+\]
+For the last bound use \(d\le(x-100)/12\), \(\log2<1\), and the
+decrease of \(x^3e^{-x/4}\) on \([100,\infty)\).
+The upper bound \(2(4/3)^3 100^3/(2^8 2^{25})\) is below \(1/32\).
+Now \(|V_j|\le\rho^2/2\) by the telescoping bound of Section~4,
+including order zero. The absolute tilt majorant gives
+\[
+ |Y_j-V_j|\le (\rho^2/2)(e^v-1)\le\rho^2v<s/32 .
+\]
+At \(Y_p=0\) the bare phase gap \eqref{center} gives
+\(|V_n-cV_p|>s\), hence \(|Y_n|>15s/16\).
+Since \(|Y_j|\le\rho^2\), the insertion is at most
+\(\rho^2J/n<1/(32n)\le s/32\). This proves \eqref{goal}.
+
+\subsection{The exterior from the exact positive labels}
+For \(x\ge3\sqrt p\) we use \(p\ge\max(65536,4k^2)\), which
+follows from \(n\ge10^6d^2\) and \(k=d+1\le2d\).
+Write \(u=\sqrt p\). For a positive integer \(h\), choose a uniform
+permutation of \(h\) slots and assign \(j\) labelled balls to these
+slots independently and uniformly. If \(A_C\) is the number of
+balls in a slot cycle \(C\), put \(\eta_j(h)=\mathbb{E}\prod_C w_{A_C}\),
+with \(w_0=w_1=0\). The actual coefficient of \(t^h\) in
+\(F_j(t)/(1-t)^j\) is \(h^j\eta_j(h)\). Indeed the cycle formula and
+the positive-label expression for \(M_a\) write this row EGF as
+\[
+ \exp\!\left(\sum_{h\ge1}\frac{t^h}{h}
+                   \sum_{a\ge2}w_a \frac{(hz)^a}{a!}\right).
+\]
+The coefficient of \(t^h\) is the cycle-index average over permutations
+of the \(h\) slots. For each cycle of length \(b\), the factor
+\((bz)^a/a!\) assigns each of the chosen \(a\) balls to one of its \(b\) slots;
+\(j![z^j]\) completes the assignments of labelled balls.
+At \(h=0\) the coefficient vanishes for \(j>0\).
+In particular, with \(S_q=\sum_{h\ge1}(-r)^h h^q\),
+\[
+ H_j=\sum_{h\ge1}(-r)^h h^j\eta_j(h),\qquad
+ -H'_p=\sum_{h\ge1}(-r)^h h^{p+1}\eta_p(h).
+\]
+Absolute local uniform convergence for \(x>0\) justifies differentiation.
+
+Let \(L=\lfloor u/2\rfloor\). For \(h\le L\) and \(j\ge p\),
+the mean \(\mu=j/h\) for each slot is at least \(2u\ge4k\).
+When every slot has at least \(k\) balls, all its cycle weights are
+one. For any individual binomial slot count \(X\),
+Markov's inequality applied to \(2^{-X}\) bounds
+\(\Pr(X\le\mu/4)\) by
+\(\exp(-\mu/2+\mu\log(2)/4)\le e^{-\mu/4}\).
+Thus
+\begin{equation}\label{quadratic-slot-head}
+ 0\le1-\eta_j(h)\le h e^{-j/(4h)}
+ \le(u/2)e^{-u/2}<1/(100n).
+\end{equation}
+We will also use \(e^{u/8}>200u^3\) for \(u\ge256\). It holds
+at 256 since \(2^{32}>200\cdot256^3\), and
+\(e^{u/8}/u^3\) is increasing there.
+
+For \(q=p,n\), let \(m_q\) be a mode of \(h^q r^h\) over positive
+\(h\) and let \(W_q=m_q^q r^{m_q}\).
+Comparison with the preceding label gives \(m_q\le q/x+1\le u/3+2\).
+For either exterior tail beyond the adjacent labels the weight at
+distance \(b\ge2\) from the mode is at most
+\(W_q 50^{1-b}\). To see this, the first such outward ratio is at
+most \((1-(m_q+1)^{-2})^q\), by taking its ratio with the previous
+one, which is at most one. On the left the same bound follows
+with \(m_q-1\) in place of \(m_q+1\), whenever that tail exists.
+Since \(m_q+1\le3u/7\), both bounds are at most
+\(e^{-49/9}<1/50\); subsequent ratios decrease. Consequently
+\[
+ \sum_{h\ge1}h^q r^h<4W_q,\qquad
+ \sum_{h>L} h^q r^h
+ <2W_q 50^{3-u/6}\le2W_q e^{-u/8}<W_q/(100n).
+\]
+Here \(L-m_q\ge u/6-3\ge u/8\).
+Combining \eqref{quadratic-slot-head} and the tail, using
+\(0\le \eta_j(h)\le1\) everywhere and \(W_n\le nW_p\), gives
+\begin{equation}\label{quadratic-exterior-errors}
+ |H_p-S_p|\le W_p/(20n),\qquad
+ |H_n-S_n|\le W_p/20,\qquad
+ |-H'_p-S_n|\le W_p/20.
+\end{equation}
+
+Finally take \(h_0\) to be the stronger neighbor of \(m_p\),
+with missing left neighbor given weight zero. The smaller neighbor
+has weight below \(W_p/10\), since the product of the neighbor
+weights at \(m_p>1\) is
+\(W_p^2(1-m_p^{-2})^p\) and \(m_p\le 2u/5\).
+Centering \(S_n-h_0S_p\) cancels the stronger neighbor and leaves
+the mode with magnitude \(W_p\). The remaining immediate term is
+bounded by \(2W_p/10\); the more distant terms cost at most
+\(2W_p\sum_{b\ge2}(b+1)50^{1-b}\). Their total is strictly below
+\(W_p/2\). It follows that
+\[
+ W_p/2<|S_n|+h_0|S_p|.
+\]
+At \(H_p=0\), \(h_0\le n\) and \eqref{quadratic-exterior-errors}
+give \(|S_n|>9W_p/20\). Both true quantities in \eqref{goal}
+have the sign of \(S_n\), proving the assertion in the exterior.
+
+\subsection{The original rows}
+For \(j\ge k\), the linear coefficient of the original row is one:
+a single \(j\)-cycle has unit weight and its cycle polynomial is
+\(tA_{j-1}(t)\), while two or more cycles give at least two excedances.
+Inversion gives reciprocity of the quotient, which is monic with
+constant term one and has no nonnegative real root.
+For the chosen profile connect its short-cycle weights by a straight
+segment to the all-one short-cycle vector, keeping the fixed-point
+and longer-cycle weights fixed. The sign \eqref{goal} holds over the
+whole segment at every predecessor zero in logarithmic coordinates.
+Reciprocity and the transport argument of Section~\ref{transport}
+give strict interlacing with simple negative quotient roots.
+Restoring the common simple zero gives weak interlacing, and the
+all-zero short-cycle vector yields the minimum-cycle-length
+enumerators. This proves Theorem~\ref{general}.

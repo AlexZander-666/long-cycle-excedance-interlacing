@@ -1,0 +1,39 @@
+\section{A fourth-degree tilt and cutoff five}\label{sec:five}
+We prove Theorem~\ref{five}, retaining the notation of Section~\ref{sec:general}. In this section \(F_j\) denotes the independently weighted strict-excedance row. All comparisons use identical weights at the two sizes.
+\paragraph{An adjustable two-pole estimate.}
+
+For \(x\ge0\), put \(r=e^{-x},t=-r,\rho=|x+i\pi|,s=\pi/\rho,c=x/\rho\). Let \(L(z)=(1+r e^z)^{-1}\), \(B=\exp(\sum_{a=1}^d b_a z^a)\), \(B^\#(R)=\exp(\sum |b_a|R^a)\). Define \(V_j=\rho^{j+1}[z^j]L\), \(Y_j=\rho^{j+1}[z^j](BL)\). Put \(\zeta=x+i\pi\), \(z_1=\rho/\zeta\), \(D=|B(\zeta)|\). For every \(1<\lambda\le |x+3i\pi|/\rho\), \(R=\lambda\rho\), and every \(j\ge0\),
+\[
+ |Y_j-2\Re(B(\zeta)z_1^{j+1})|
+ \le \max\!\left(\rho,\frac{\lambda\rho^2}{2\pi^2}\right)\lambda^{-j} B^\#(R).                 \tag{*}
+\]
+This bound applies to any real finite tilt, including either sign of its highest coefficient.
+
+For \(m\ge1\), the logistic coefficients equal the absolutely convergent signed-odd pole sum, paired by conjugation. With \(z_h=\rho/(x+ih\pi)\), the nonprincipal remainder is at most \(2\sum_{l\ge1}|z_{2l+1}|^2\lambda^{1-m}\). Each squared modulus is at most \(\rho^2/[4\pi^2 l(l+1)]\). For \(m=0\), use the actual \(V_0=\rho/(1+r)\), with \(|V_0-2c|\le\rho\). Writing \(B(z)=\sum_i B_i z^i\), compare the finite convolution with the entire principal amplitude. For \(i<j\), the preceding remainder costs at most \(2\lambda\sum_{l\ge1}|z_{2l+1}|^2\) times \(\lambda^{-j}|B_i|R^i\). For \(i=j\) the corresponding constant is \(\rho\), and for \(i>j\) the missing principal amplitude costs at most \(2/\lambda\). The index ranges are disjoint and \(2/\lambda<\rho\), proving (*) by taking their maximum. This avoids paying the full tilt on a preselected circle of height \(2\pi\).
+
+\paragraph{Returning to actual permutations.}
+
+The cycle-profile exponential formula gives \(\sum H_j z^j/j!=(1-t)BL\), where \(H_j=F_j(t)/(1-t)^j\) and \(F_j\) is the original weighted row. Put \(M_a=t A_{a-1}(t)/(1-t)^a\). Then \(b_1=r/(1+r)\) and \(b_a=(w_a-1)M_a/a!\) for \(2\le a\le4\). The true derivative in \(x\), at fixed marks, satisfies
+\[
+H_n+H'_p=\sum_{a=1}^{4}(p)_a C_a H_{p-a},\qquad C_a=(w_{a+1}-w_a) M_{a+1}/a!.
+\]
+Consequently \(|Y_n|>n^{-1}\sum|C_a|\rho^{a+1}|Y_{p-a}|\) at \(H_p=0\) proves \(H_n(-H'_p)>0\). In unscaled raw coordinates \(A_j=H_j/(1-t)\) the insertion bound is instead \(\sum(p)_a|C_a A_{p-a}|\).
+
+Write \(H=r/(1+r)^2\) and \(v=(1-r)/(1+r)\). Here \(A_m\) is the Eulerian polynomial and \((p)_a\) is the falling factorial. The four moments are \(-H,-Hv,-H(1-6H),-Hv(1-12H)\), for orders 2 through 5 respectively. All have magnitude at most \(r\). For the last term, \(v(1-12H)=3v^3-2v\). Its maximum on \([0,1]\) is one and its minimum is \(-4\sqrt2/9>-1\). The sign of \(b_4\) agrees with \(1-6H\) wherever the mark is below one; \(b_1,b_2,b_3\ge0\).
+
+
+
+\paragraph{Compact, \(0\le x\le11\).} The rational checker divides this single real interval into 88 closed cells of length \(1/8\); it never samples marks or roots. In each cell it bounds the range of \(r,H,v\), of every coefficient, and of the real parts of \(\zeta^a\). From these it bounds \(B^\#(\lambda\rho)/D\), the geometrical factors in (*), and \(J=\sum |C_a|\rho^{a+1}/s\). Among the admissible rational choices \(\lambda\in\{21/20,22/20,\ldots,3\}\) it chooses the one giving the smallest proven cell bound. For all \(j\ge n-5\ge44\), its largest bound for the left side of (*) divided by \(sD\) is \(949/400000<3/1000\). Also \(J<48/5\). Set \(\epsilon=3/1000\). The imaginary part of \(S=B(\zeta)z_1^{p+1}\) at \(Y_p=0\) has magnitude at least \(D-|\Re S|\), and \(|\Re S|\le\epsilon sD/2\). Rotating once by \(c-is\) yields \(|Y_n|\ge(2-3\epsilon)sD\), whereas \(|Y_{p-a}|\le(2+\epsilon)D\). The strict inequality \((2+\epsilon)J/n<2-3\epsilon\) holds even using the global caps.
+\paragraph{Middle, \(11\le x\le3\sqrt p\).} Write \(A=11\), \(\alpha=\sqrt{1+\pi^2/A^2}\), \(C=A^{-3}+(2A^2)^{-1}+(6A)^{-1}+1/24\). The tilt mass at \(\rho\) is at most \(C\alpha^4 x^4 e^{-x}\le v_0<0.017754\). For \(m\ge1\) the nonprincipal logistic poles have total absolute mass \(\le\rho^2/((m+1)\pi^2)\), by Bernoulli's inequality applied to \((1+4l(l+1)s^2)^{(m+1)/2}\) and summing \(1/[l(l+1)]\). For \(i\le j/2\), \(m=j-i\), this gives the bound \(2+2\rho^2/((n-3)\pi^2)\) on \(|V_m|\). The contribution of \(1\le i\le j/2\) to \(|Y_j-V_j|/s\) is at most
+\[
+ \frac{Ce^{-A}}{\pi(1-v_0)}\left(2\alpha^5 A^5+
+ \frac{2\alpha^7 A^7}{(49-3)\pi^2}\right)<0.170,
+\]
+using monotonicity of \(x^h e^{-x}\) for \(h\le7\). For \(i>j/2\) bound \(|V_m|\le2\rho^2/x\) for all \(m\ge0\), including order zero. The absolute tilt at \(2\rho\) costs \(e^{16v_0}<2\). Since \(2\rho^3/(\pi x)<7n\), the remaining error divided by \(s\) is at most \(14n/2^{\lfloor(n-5)/2\rfloor}<0.000167\) by checking 49 and 50 and using monotonicity on each parity class. Thus \(|Y_j-V_j|<s/4\). At \(Y_p=0\) the already proved bare gap gives \(|V_n-cV_p|>s\) since \(ns^2\ge1\) and \(|V_p|<s/4\); hence \(|Y_n|>s/2\). For the insertion indices, \(|V_j|\le2+n/(n-4)\), so \(|Y_j|<4\). Finally \(J\le C\alpha^6A^6e^{-A}/\pi<0.740\), giving insertion below \(s/2\).
+\paragraph{Exterior, \(x\ge3\sqrt p\).} For \(T_j(h)=j![z^j]B(z)e^{hz}\), \(A_j=\sum_{h\ge0}(-r)^hT_j(h)\). For all \(n\ge49\), \(r n^5<1/3\) and \(R_0=e^{x/4}>2n\). The inequalities at 49 are exact Taylor comparisons; their logarithmic derivatives give monotonicity. At \(h\ge1\), coefficient extraction gives \(|T_j(h)/h^j-1|\le\exp(r\sum_{a=1}^4 n^a/a!)-1<1/(60n)\), since the sum is below \(n^4/21\). At \(h=0\), using radius \(R_0\) gives \(|T_j(0)|\le6r n^4 2^{-(j-4)}\le r/(60n)\) for every needed \(j\ge n-5\); the tilt cost there is at most \(41/24\). At the zero of \(A_p\), put \(W=\max_{h\ge1}h^pr^h\), let \(h_0\) attain the maximum, and put \(S_j=\sum_{h\ge1}(-r)^h h^j\). The discrete peak bounds used in Section~\ref{sec:four}, with the size-$48$ peak estimate checked in the accompanying certificate, yield \(r\le W\), \(\sum_{h\ge1}h^jr^h\le4W\) for \(j\le p\), \(\sum h^nr^h\le4nW\), and \(W/2<|S_n|+(h_0+1)|S_p|\) with \(h_0+1\le n\). Thus \(|S_p|\le W/(12n)\) and \(|A_n-S_n|<W/12\), implying \(|A_n|>W/3\). The shorter alternating moments satisfy \(|S_j|\le W\) by unimodality, so \(|A_j|<2W\). The raw insertion is smaller than \(2Wr n^4/21<W/3\).
+
+All three use closed regions and permit every point of the weight cube, including zero weights. The general homotopy readout passes through the derangement anchor, uses reciprocal symmetry to cover the second half of the negative axis, and gives the claimed strict interlacing of nonzero roots. Restoring the common simple zero gives the original weak interlacing.
+
+
+\paragraph{Finite predecessor pairs.}\label{five-signed-remainder}
+The two integer recurrences in the accompanying finite certificate checker use respectively the cycle containing a fixed letter, and deletion/insertion of the largest letter. They agree through 48; literal permutation enumeration separately agrees for sizes five through eight. Remove the simple factor \(t\) in each pair and begin with the upper, then the lower quotient. At each step replace the previous pair \((f,g)\) by \((g,-\operatorname{rem}(f,g))\), dividing by positive contents. Each remainder has the expected degree exactly one less than its predecessor and a positive leading coefficient. The terminal constant is positive. Backward induction using the opposite signs at zeros of \(g\) and the signs at infinity shows strict interlacing at every stage; it also proves simplicity. Positive original quotient coefficients exclude nonnegative zeros. The checker performs 1,032 exact remainder checks for the 43 target pairs and prints a digest of the normalized transcript.  This finite calculation concerns the hard cutoff alone.

@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this implementation or these proofs, please cite the accompanying manuscript."
 title: "Long-cycle excedance polynomial interlacing"
 type: software
-version: 1.1.0
+version: 1.2.0
 repository-code: "https://github.com/AlexZander-666/long-cycle-excedance-interlacing"
 authors:
   - family-names: Zuo

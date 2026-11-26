@@ -1,5 +1,11 @@
 # Interlacing of excedance polynomials with a minimum cycle length
 
+The [seventeen-page revision](cutoff-six/paper/main.pdf) treats the hard
+cutoff six at all upper sizes $n\ge7$ and four independent short-cycle
+weights at upper sizes $n\ge49$. It also gives the explicit sufficient
+bound $n\ge10^6(k-1)^2$ for independent short-cycle weights at arbitrary
+cutoffs. [Cutoff-six proof and reproduction](cutoff-six/README.md)
+
 The [twelve-page revision](cutoff-five/paper/main.pdf) adds cutoff five.
 The unweighted quotients strictly interlace at every upper size $n\ge6$.
 For $n\ge49$ this also holds throughout the closed cube of independent
