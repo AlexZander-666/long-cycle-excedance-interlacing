@@ -1,0 +1,104 @@
+\section{A fifth-degree tilt and cutoff six}\label{sec:six}
+
+Use the notation of Sections~\ref{sec:normalized} and \ref{sec:general}, now with \(k=6\). We prove the insertion inequality \(|Z|<|Y_n|\) at a zero of \(H_p\) for every \(n=p+1\ge49\) and all four weights. Here
+\[
+ B(z)=\exp\!\left(\sum_{a=1}^5 b_a z^a\right),\qquad
+ C_a=(w_{a+1}-w_a)M_{a+1}/a!,\qquad
+ Z=\frac{1}{n}\sum_{a=1}^5 C_a\rho^{a+1}Y_{p-a}.
+\]
+Put \(u_0=r/(1+r)^2,\ v_0=(1-r)/(1+r)\), where \(r=e^{-x}\). The moments of orders two through six are
+\[
+ -u_0,\quad -u_0v_0,\quad -u_0(1-6u_0),\quad
+ -u_0v_0(1-12u_0),\quad -u_0(1-30u_0+120u_0^2).
+\]
+For the last identity, the Eulerian polynomial is \(A_5(t)=1+26t+66t^2+26t^3+t^4\). The last quadratic takes values in \([-7/8,1]\) on \([0,1/4]\), as is seen from its vertex and endpoints. Also \(v_0(1-12u_0)=3v_0^3-2v_0\) has absolute value at most one on \(0\le v_0\le1\). Hence \(|M_a|\le u_0\) for \(2\le a\le6\), and
+\[
+ |b_a|\le r/a!,\qquad |C_a|\le r/a!\qquad(1\le a\le5).
+\]
+Write \(\mathcal V(R)=\sum_{a=1}^5 |b_a|R^a\) and \(J=\sum_{a=1}^5|C_a|\rho^{a+1}/s\).
+
+\paragraph{Compact interval \(0\le x\le13\).}
+The adjustable radius estimate \((*)\) of Section~\ref{sec:five} applies at \(R=\lambda\rho\) for \(1<\lambda\le|x+3\ii\pi|/\rho\). With \(D=|B(\zeta)|\ge e^{-\mathcal V(\rho)}\), its error divided by \(sD\) is at most
+\[
+ \max\!\left(\rho,\frac{\lambda\rho^2}{2\pi^2}\right)
+ \frac{\rho}{\pi}\lambda^{-j}
+       \exp\!\bigl(\mathcal V(\lambda\rho)+\mathcal V(\rho)\bigr).
+\]
+Partition \([0,13]\) into the 104 closed intervals \([h/8,(h+1)/8]\). On each interval bound \(r,u_0,v_0,\rho\) by their endpoint values, bound \(|1-6u_0|\) and \(|1-12u_0|\) by the greater endpoint magnitude, and use \(|M_6|\le u_0\). The attached rational certificate chooses a radius on each interval. It checks admissibility at the right endpoint, since \((x^2+9\pi^2)/(x^2+\pi^2)\) decreases, and bounds the exponential by rational Taylor enclosures. For \(j\ge n-6\ge43\) it gives an error less than \((7/50)sD\) and \(J<15\). The respective rational upper bounds in the arithmetic replay are \(0.1363569\) and \(14.2337303\).
+
+Set \(\epsilon=7/50\) and \(S=B(\zeta)(\rho/\zeta)^{p+1}\). At \(Y_p=0\) we have \(|\Re S|\le\epsilon sD/2\) and \(|\Im S|\ge D-|\Re S|\). The pole term at \(n\) uses \((c-\ii s)S\). Its real part has magnitude at least \(sD-(c+s)|\Re S|\), so \(|Y_n|\ge (2-3\epsilon)sD\), using \(c+s\le2\). Each shorter term needed in the insertion formula has magnitude at most \((2+\epsilon)D\). The inequality \(15(2+\epsilon)<49(2-3\epsilon)\) proves the gap.
+
+\paragraph{Middle interval \(13\le x\le3\sqrt p\).}
+Set \(a_0=13\), \(\alpha=\sqrt{1+\pi^2/a_0^2}\), and
+\[
+ C=\sum_{a=1}^5 a_0^{a-5}/a! .
+\]
+Then \(\rho\le\alpha x\) and \(\mathcal V(\rho)\le Cr\rho^5\le v_\ast=13/1000\), because \(x^5e^{-x}\) decreases on this interval. Also \(\exp(\mathcal V(2\rho))\le e^{32v_\ast}<2\).
+Write \(V_j=\rho^{j+1}[z^j]L(z)\), as before. For \(m\ge1\), the two nearest terms in the signed odd-pole sum cost at most two. For the remaining positive odd labels \(2h+1\), \(h\ge1\), Bernoulli's inequality gives
+\[
+ (1+4h(h+1)s^2)^{-(m+1)/2}
+ \le \frac{1/h-1/(h+1)}{2(m+1)s^2}.
+\]
+Telescoping and counting the conjugates gives \(|V_m|\le2+1/((m+1)s^2)\). In the convolution for \(Y_j-V_j\), if the tilt index is \(1\le i\le j/2\) and \(j\ge n-6\), then \(2(j-i+1)\ge n-4\). Thus
+\[
+ |V_{j-i}|\le2+\frac{2\rho^2}{(n-4)\pi^2}.
+\]
+The nonconstant tilt mass is at most \(\mathcal V(\rho)/(1-\mathcal V(\rho))\). Consequently the part with \(i\le j/2\), divided by \(s\), is bounded above by
+\[
+ \frac{Ce^{-a_0}}{\pi(1-v_\ast)}
+      \left(2\alpha^6 a_0^6+\frac{2\alpha^8 a_0^8}{45\pi^2}\right)
+ <\frac{153}{1000}.
+\]
+Here \(n-4\ge45\) and \(x^m e^{-x}\) decreases for \(x\ge13\) and \(m\le8\). For the remaining convolution use the all-order bound \(|V_m|\le2\rho^2/x\) from the odd-pole sum. At \(m=0\), the explicit value \(V_0=\rho/(1+r)\) gives the same bound. Apply the tilt majorant at \(2\rho\). Since \(2\rho^3/(\pi x)<7n\), the rest divided by \(s\) has bound \(14n\,2^{-\lfloor(n-6)/2\rfloor}\le 0.0003272\), checked at 49 and 50 and decreasing in steps of two. Thus \(|Y_j-V_j|<s/4\) in every required order.
+
+We have \(ns^2\ge1\). At \(Y_p=0\), \(|V_p|/2<s/8\le1/8\), so the bare phase inequality \eqref{center} gives \(|V_n-cV_p|>s\). The two error bounds then give \(|Y_n|>s/2\). The shorter rows satisfy \(|Y_j|<2+n/(n-5)+1/4<4\), by the same pole mass bound at order \(j\). Finally,
+\[
+ J\le Ce^{-a_0}\alpha^7 a_0^7/\pi<3/4 .
+\]
+Since \(4J/n<1/2\), the weighted insertion term is smaller than \(|Y_n|\).
+
+\paragraph{Exterior \(x\ge3\sqrt p\).}
+Write \(\mathcal H_j=H_j/(1+r)\), and set
+\[
+ T_j(h)=j![z^j]\bigl(B(z)e^{hz}\bigr),\quad
+ \mathcal H_j=\sum_{h\ge0}(-r)^hT_j(h),\quad
+ S_j=\sum_{h\ge1}(-r)^h h^j,\quad W=\max_{h\ge1}h^p r^h .
+\]
+The series for \(\mathcal H_j\) follows by expanding \(L\) geometrically in a neighborhood of \(z=0\), valid since \(x>0\). Let \(D(N)=\sum_{a=1}^5 N^a/a!\). For \(N\ge49\) we have \(D(N)\le N^5/100\) by dividing by \(N^5\) and evaluating the decreasing sum at \(49\). Also \(r n^6<14\). Indeed \((1+y^2)^6e^{-3y}\) decreases for \(y\ge69/10\), by logarithmic differentiation. A rational check at \(y=69/10<\sqrt{48}\) bounds its value by \(14\) using the first 64 terms of the series for \(e^{207/10}\). These bounds give \(rD(n)<1/(6n+1)\).
+
+For \(h\ge1\), expanding the product and using \(j!/(j-i)!\le j^i\) gives
+\[
+ |T_j(h)-h^j|
+ \le h^j(e^{\mathcal V(j/h)}-1)
+ \le h^j/(6n) \qquad (1\le j\le n).
+\]
+At label zero, \(\mathcal V(2n)\le (32/100)rn^5<1/2\). For \(n-6\le j\le n\), the nonconstant coefficient bound at \(2n\) and \(j!\le n^j\) give
+\[
+ |T_j(0)|\le 2^{-j}(e^{\mathcal V(2n)}-1)
+          \le rn^5 2^{-j}\le r/(6n).
+\]
+For the last comparison one can check \(12n^6\le 2^{n-6}\) at 49 and use \((50/49)^6<2\). In total
+\begin{equation}\label{six-label-error}
+ |\mathcal H_j-S_j|\le
+     \frac{r+\sum_{h\ge1}h^j r^h}{6n}\qquad(n-6\le j\le n).
+\end{equation}
+
+We recall the exterior peak estimates with their constants. For \(q=p,n\), \(x\ge(29/10)\sqrt q\). The positive sequence \(h^q r^h\) is unimodal by its decreasing successive ratios. If \(m\) is a mode, then \(m-1\le q/x\) by comparison with the term at \(m-1\) when \(m\ge2\), so \(m\le\sqrt q/2\) for \(q\ge48\). The product of the two immediate neighbor ratios relative to the mode is at most \((1-1/m^2)^q\le e^{-4}<1/50\). The missing left neighbor at \(m=1\) contributes zero. The smaller neighbor is at most \(1/7\) of the peak. The ratio to the next farther term on the left is at most \(e^{-q/m^2}\). On the right the corresponding ratio is at most \(e^{-4}\) if \(m+1\le\sqrt q/2\), by contracting the preceding ratio by \((1-1/(m+1)^2)^q\). If \(m+1>\sqrt q/2\), it is at most \(e^{q/(m+1)-x}\le e^{-(9/10)\sqrt q}\). All farther ratios are therefore at most \(1/50\), giving total mass at most four times the peak.
+
+With \(m_p\) a mode for \(p\), let \(h_0\) be its larger neighbor by mass. In \(S_n-h_0S_p\), the term at \(h_0\) vanishes and the term at \(m_p\) has magnitude \(W\). The remaining contributions have total magnitude at most
+\[
+ 2W/7+2W\sum_{b\ge2}(b+1)50^{1-b}<W/2 .
+\]
+It follows that \(W/2<|S_n|+(m_p+1)|S_p|\). We have \(m_p+1\le n/8\) and \(m_n\le n/8\), because \(m_q\le\sqrt q/2\). At \(\mathcal H_p=0\), \eqref{six-label-error} gives \(|S_p|\le5W/(6n)\le W/n\). Also the peak in exponent \(n\) is at most \(m_nW\). Thus \(|\mathcal H_n-S_n|\le (1+4m_n)W/(6n)\le W/8\), and \(|\mathcal H_n|>W/4\).
+
+For \(n-6\le j\le p\), an alternating sum of a positive unimodal sequence is bounded in magnitude by its peak, by splitting at the mode and grouping the pairs on either side. Thus \(|S_j|\le W\) and \eqref{six-label-error} implies \(|\mathcal H_j|<2W\). The unscaled insertion term, divided by \(1+r\), is at most
+\[
+ \sum_{a=1}^5(p)_a |C_a\mathcal H_{p-a}|
+       \le 2WrD(n)<W/4 .
+\]
+This is the desired sign in the exterior.
+
+\paragraph{Root order and the finite hard-cutoff range.}
+The three bounds give \(H_n(-H'_p)>0\) at every zero with \(x\ge0\). The straight-line path to all unit weights on lengths at least two keeps the four short weights in the cube. Reciprocity and the derangement anchor in Section~\ref{transport} give the weighted claim. All short weights zero gives the hard cutoff in this range.
+
+For upper sizes \(7\) through \(48\) use the \hyperref[five-signed-remainder]{signed-remainder test at the end of Section~\ref*{sec:five}}. The cutoff-six coefficient table can be generated either by the cycle containing the smallest label or by largest-label insertion, and these agree coefficient by coefficient. Literal permutation enumeration also checks sizes \(6\) through \(9\). Starting each quotient pair with the upper row, the negative-remainder chains, with division by positive contents, have \(1029\) degree-one drops and positive leading coefficients. Each chain ends in a positive constant. Backwards sign alternation gives the root order, and positive quotient coefficients place every root below zero. The dyadic endpoint certificate used in Lean gives the same conclusion directly by opposite signs in disjoint intervals and the exact degrees. This completes Theorem~\ref{six}.

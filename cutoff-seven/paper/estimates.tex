@@ -1,0 +1,81 @@
+\section{The three sign estimates}
+Throughout this section \(n\ge512\) and \(0\le u\le1\).
+
+\subsection{The first conjugate poles}
+Assume \(0\le x\le16\), and put \(R=(x^2+4\pi^2)^{1/2}\). Then \(\rho<17,\ R<18,\ \rho/R<24/25\). The poles of \(L\) are \(x+\ii\ell\pi\), for odd signed integers \(\ell\), all with residue \(-1\). The contour \(|z|=R\) encloses precisely the two nearest ones. Its distance to each pole exceeds \(2/5\): the two smallest radial gaps are \(3\pi^2/(R+\rho)\) and \(5\pi^2/(R+\sqrt{x^2+9\pi^2})\). On the contour \(|1+e^{z-x}|>1/10\). Indeed, if \(v=\Re z-x\) has \(|v|\ge1\), use \(|1-e^v|\). Otherwise let \(w\in[-\pi,\pi]\) be the displacement of \(\Im z\) from the nearest odd multiple of \(\pi\). Then
+\[
+ |1+e^{z-x}|^2=(1-e^v)^2+4e^v\sin^2(w/2)
+ \ \ge\ (v^2+w^2)/10.
+\]
+By \(aR\le xe^{-x}+\pi\) and \(bR^2\le x^2e^{-x}/2+\pi^2/2\), one has \(|B(z)|\le e^{17}\). At \(\zeta\), \(D=|B(\zeta)|\ge e^{-\pi^2/8}>1/4\). Moving the coefficient integral gives
+\begin{equation}\label{poles}
+ \left|Y_j-2\Re\{B(\zeta)e^{-\ii(j+1)\theta}\}\right|
+ \le170\,e^{aR+bR^2}(\rho/R)^j <10^{-6}\qquad(j\ge509).
+\end{equation}
+For the last inequality split at \(x=8\). For \(x\le8\) one has \(\rho/R\le9/10\) by squaring, and \(170e^{17}(9/10)^{509}<10^{-6}\). For \(8\le x\le16\) the exponent is at most \((18+18^2/2)e^{-8}<1\), and \(170e(24/25)^{509}<10^{-6}\).
+
+At \(Y_p=0\) let \(\phi=\arg B(\zeta)-n\theta\). Then \(|\cos\phi|\le2\cdot10^{-6}\) and \(|\sin\phi|>.99\). Since \(s\ge3/17\), the phase \(\phi-\theta\) in the next row and \eqref{poles} give \(|Y_n|>3Ds/2\). Both shorter rows have absolute value below \(3D\). For \(h=2,3\), \(\rho\le x+\pi\) and \(e^{-x}(x+\pi)^h\) decreases on the nonnegative half-line. Thus
+\[
+ |Z|\le 3D(\pi^2+\pi^3)/512 < (3D/2)(3/17).
+\]
+
+\subsection{The remaining central interval}
+Assume \(16\le x\le3\sqrt{n-1}\). The partial fractions of the logarithmic derivative of the product for \(\cosh\) \cite{dlmf}, or its differentiated series, give
+\[
+ V_j=\sum_{\ell\ \mathrm{odd},\,\ell\in\mathbb Z}(c+\ii\ell s)^{-(j+1)}
+ \quad (j\ge1),\qquad V_0=\rho/(1+e^{-x}).
+\]
+The differentiated sums converge absolutely and locally uniformly away from the poles. To control every order at once, write \(\ell=2i+1>0\). Each modulus of order at least two is at most \(\rho^2/(x^2+\pi^2\ell^2)\), which is at most
+\[
+ \rho^2\left(\frac1{x+2i}-\frac1{x+2i+2}\right),
+\]
+because \((x+\ell)^2-1\le2(x^2+\pi^2\ell^2)\). Telescoping and including conjugates gives \(|V_j|\le2\rho^2/x\le2(x+4)\) for \(j\ge1\); the constant term also satisfies the last bound. The nonnegative coefficients of \(B\) now give
+\begin{align}
+ |Y_j-V_j|&\le2(x+4)(e^{a\rho+b\rho^2}-1)
+ \le4(x+4)^3e^{-x}<s/32.\label{bias}
+\end{align}
+Here \(a\rho+b\rho^2\le (x+4)^2e^{-x}<1/2\). For the last inequality use \(s\ge3/(x+4)\), the decrease of \(e^{-x}(x+4)^4\), and \(4\cdot20^4e^{-16}<3/32\).
+
+For \(m\ge8,\ ms^2\ge1\) put \(U_m=V_{m-1}/2\). We claim
+\begin{equation}\label{center}
+ |U_m|\le1/8\quad\Longrightarrow\quad |U_{m+1}-cU_m|>s/2 .
+\end{equation}
+For positive odd \(\ell\), \(|c+\ii\ell s|^{-m}\le[1+(\ell^2-1)/8]^{-4}\), using \((1+h)^{m/8}\ge1+mh/8\). The sum of these bounds weighted by \(\ell\), over \(\ell\ge3\), is at most
+\[
+ 3/16+4096(5^{-7}+5^{-6}/12)<1/3.
+\]
+Indeed the summand at 3 equals \(3/16\) in the bound and the remaining terms are at most \(4096\ell^{-7}\); compare the decreasing odd-lattice tail with an integral. The unweighted tail is below \(1/9\). Hence \(|\cos(m\theta)|\le1/8+1/9<1/4\). The \(\ell=1\) term of the centered difference has magnitude \(s|\sin(m\theta)|\). The remaining terms cost at most \(s/3\), since \(|(c+\ii\ell s)^{-1}-c|\le\ell s\) by squaring. This proves \eqref{center} under the stated assumptions \(m\ge8\) and \(ms^2\ge1\), for any \(x\ge0\).
+
+In this interval \(ns^2\ge1\) since \(x^2\le9(n-1)\). At a zero of \(Y_p\), \eqref{bias} and \eqref{center} give \(|V_n-cV_p|>s\) and \(|Y_n|>15s/16\). Both shorter rows have absolute value below \(3(x+4)\), so
+\[
+ |Z|\le 6(x+4)^4e^{-x}/n<s/4.
+\]
+The last inequality uses the decrease of \(e^{-x}(x+4)^5\) and \(6\cdot 20^5e^{-16}/512<3/4\).
+
+\subsection{The exterior}
+Assume \(x\ge3\sqrt p\). Write \(r=e^{-x}\), \(w_h=h^p r^h\) for \(h\ge1\), and let \(m\) maximize these weights, with \(W=w_m\). If \(m>1\), comparison with \(m-1\) gives \(x\le p\log(m/(m-1))\le p/(m-1)\). Hence \(m\le2\sqrt p/5\) and \(m+1\le \sqrt p/3+2\le3\sqrt p/7\) for \(p\ge511\), also at \(m=1\). The product of the two neighbors divided by \(W^2\) equals \((1-m^{-2})^p\), with \(w_0=0\). The smaller neighbor is therefore below \(W/20\). Put \(\delta=1/200\). The ratio just past the right neighbor is at most \((1-(m+1)^{-2})^p\le e^{-49/9}<\delta\), by comparing successive ratios and using \(w_{m+1}\le W\). The left side has the same bound whenever that tail exists, and the ratios decrease outwards. Thus \(w_h\le W\delta^{|h-m|-1}\) at distances at least two. Summing yields
+\[
+ \sum_{h\ge1} w_h<4W,\qquad
+ \sum_{h\ge1} h w_h\le m\sum w_h+\sum |h-m|w_h<6nW.
+\]
+
+Let \(T_j(h)=j![z^j]B(z)e^{hz}\). Expanding \(L\) geometrically near zero gives
+\[
+ H_j/(1-t)=\sum_{h\ge0}(-1)^h r^hT_j(h).
+\]
+For \(n-3\le j\le n\) and \(h\ge1\), expanding the tilt and bounding falling factorials by powers gives
+\[
+ 1\le T_j(h)/h^j\le \exp(aj/h+bj^2/h^2)\le1+n^{-4}.
+\]
+Indeed \(x^2\ge9(n-1)\ge8n\) and \(32!\le8^{16}512^8\). Hence \(e^x\ge x^{32}/32!\ge n^8\) and \(r\le n^{-8}\). At \(h=0\) each monomial contributing to the coefficient uses at least \(\lceil j/2\rceil\) powers of \(r\); summing the inverse factorials of the linear and quadratic factors gives
+\[
+ 0\le T_j(0)\le j!e^2 r^{\lceil j/2\rceil}\le n^{-4}r .
+\]
+For the last bound use \(\lceil j/2\rceil-1\ge j/3,\ x/3\ge2\log n\), and \(j!\le n^j\).
+Put \(S_j=\sum_{h\ge1}(-1)^h r^hh^j\). As \(W\ge r\), the absolute error in replacing \(H_j/(1-t)\) by \(S_j\) is at most \(5n^{-4}W\) for \(n-3\le j\le p\) and at most \(7n^{-3}W\) for \(j=n\).
+
+Let \(h_0\) be the label of the stronger immediate neighbor of \(m\), choosing the right one for \(m=1\). In \(S_n-h_0 S_p\) this neighbor disappears, while the mode contributes magnitude \(W\). Thus
+\[
+ |S_n-h_0 S_p|\ge W\left(1-2/20-2\sum_{d\ge2}(d+1)\delta^{d-1}\right)>4W/5 .
+\]
+At \(H_p=0\) the preceding error estimates and \(h_0\le n\) give \(|H_n|/(1-t)>3W/4\). Each of the two shorter rows has magnitude below \(5(1-t)W\); inserting these bounds in \eqref{insert} gives \(|H_n+H'_p|/(1-t)\le5(n+n^2)rW<W/4\). This proves \eqref{goal} also in the exterior and concludes the proof of Theorem~\ref{family}.

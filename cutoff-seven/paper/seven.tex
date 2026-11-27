@@ -1,0 +1,156 @@
+\section{A sixth-degree tilt and cutoff seven}\label{sec:seven}
+
+Retain \(r=e^{-x}\), \(p=n-1\), \(\rho=\sqrt{x^2+\pi^2}\), \(s=\pi/\rho\), and \(\zeta=x+\ii\pi\).
+The main quantitative result of this section is the bound \(n\ge96\) with
+the same five independent short-cycle weights in both rows.
+For the cutoff-seven profile the normalized generating function and weighted
+insertion formula from Section~\ref{sec:general} give
+\begin{align*}
+ B(z)&=\exp\!\left(\sum_{a=1}^{6}b_a z^a\right),
+ & b_a&=(w_a-1)M_a/a!,\\
+ Z&=\frac1n\sum_{a=1}^{6} C_a\rho^{a+1}Y_{n-a-1},
+ & C_a&=(w_{a+1}-w_a)M_{a+1}/a!.
+\end{align*}
+Thus the shortest row in the insertion is \(n-7\). We prove
+\(|Z|<|Y_n|\) at \(Y_p=0\) for all \(n\ge96\).
+
+Write \(u_0=r/(1+r)^2\) and \(v_0=(1-r)/(1+r)\) as in Section~\ref{sec:six}.
+The Eulerian recurrence gives \(A_6(t)=1+57t+302t^2+302t^3+57t^4+t^5\) and hence
+\[
+ M_7=-u_0v_0(1-60u_0+360u_0^2).
+\]
+This moment requires a new bound. At \(r=1/11\), \(|M_7|/r=258335/248832>1\).
+In the variable \(v=v_0\in[0,1]\), let \(P(v)=17v/2-30v^3+45v^5/2\).
+Then \(-M_7/u_0=P(v)\) and \(-M_7/r=(1+v)^2P(v)/4\).
+For each of the 32 closed subintervals with endpoints \(h/32,(h+1)/32\),
+apply the substitution \(v=(h+z)/32\). If the resulting power coefficients
+are \(a_i\) in degree \(d\), the Bernstein coefficients are
+\(\sum_{i=0}^{j}a_i\binom ji/\binom di\) for \(0\le j\le d\).
+The Bernstein basis is nonnegative on \([0,1]\) and sums to one.
+The maxima of the absolute coefficients are bounded by
+\(152355739/83886080<11/6\) and \(1003440476713/962072674304<21/20\),
+respectively. This proves \(|M_7|\le\min((11/6)u_0,(21/20)r)\), with the
+endpoint \(r=0\) understood by continuity. All six tilt coefficients satisfy
+\(|b_a|\le r/a!\) by the bounds through order six. For the drift,
+\(|C_a|\le r/a!\) for \(a\le5\) and \(|C_6|\le(21/20)r/6!\).
+Write \(\mathcal V(R)=\sum_{a=1}^{6}|b_a|R^a\) and
+\(J=\sum_{a=1}^{6}|C_a|\rho^{a+1}/s\).
+
+\paragraph{Compact interval \(0\le x\le16\).}
+Use the adjustable two-pole bound \((*)\) from Section~\ref{sec:five},
+at \(R=\lambda\rho\) with \(1<\lambda\le|x+3\ii\pi|/\rho\).
+In each of the 128 closed eighth-grid intervals enclose \(r,u_0,v_0,\rho\)
+by their endpoint bounds, using \(|M_6|\le u_0\) and both seventh-moment
+bounds above. The rational certificate selects \(\lambda\) on the
+grid of twentieths. It tests admissibility at the right endpoint,
+where \((x^2+9\pi^2)/(x^2+\pi^2)\) is smallest. With \(D=|B(\zeta)|\),
+the pole error divided by \(sD\) is at most
+\[
+ \epsilon=\max\!\left(\rho,\frac{\lambda\rho^2}{2\pi^2}\right)
+ \frac{\rho}{\pi}\lambda^{-j}
+ \exp\!\bigl(\mathcal V(\lambda\rho)+\mathcal V(\rho)\bigr).
+\]
+Use \(j\ge n-7\ge89\) and an upper bound for this expression on the cell.
+The two-pole argument in Section~\ref{sec:six} yields
+\(|Y_n|\ge(2-3\epsilon)sD\) at \(Y_p=0\) and
+\(|Y_j|\le(2+\epsilon)D\) for the lagged rows.
+Rational endpoint and exponential enclosures give a maximum of
+\(\bigl(3\epsilon+(2+\epsilon)J/96\bigr)/2\) at most
+\(246041/1250000<1\). The recorded upper bound allows every choice of
+weights in the closed cube and proves the insertion inequality.
+
+\paragraph{Middle interval \(16\le x\le3\sqrt p\).}
+Let \(D_6(R)=\sum_{a=1}^6 R^a/a!\), \(K=D_6(16)/16^6=100117/47185920\)
+and \(\alpha=51/50\). We have \(\rho\le\alpha x\),
+\(\mathcal V(\rho)\le Kr\rho^6<1/200\), and
+\(\exp(\mathcal V(2\rho))\le(1-64/200)^{-1}<2\).
+Use \(157/50<\pi<22/7\), \(e^{-16}<1/8800000\), and the decrease
+of \(x^m e^{-x}\) for \(x\ge16\) and \(m\le9\).
+Split the tilt convolution at \(i=\lfloor j/2\rfloor\), for \(j\ge n-7\).
+In the head, \(2(j-i+1)\ge n-5\), so the logistic bound of
+Section~\ref{sec:six} gives \(2+2\rho^2/((n-5)\pi^2)\).
+The total head error divided by \(s\) is therefore bounded by
+\[
+ \frac{K e^{-x}}{\pi(1-1/200)}
+       \left(2\rho^7+\frac{2\rho^9}{(n-5)\pi^2}\right)
+ <\frac1{16}.
+\]
+For the tail use \(|V_m|\le2\rho^2/x\) at all needed orders including zero.
+Since \(2\rho^3/(\pi x)\le18\alpha^3p/\pi<7n\),
+the doubled-radius bound makes the tail divided by \(s\) at most
+\(14n\,2^{-\lfloor(n-7)/2\rfloor}<1/1000\), checked at \(n=96,97\)
+and decreasing within each parity. Thus \(|Y_j-V_j|<s/4\).
+We have \(ns^2\ge1\) since \(x^2\le9p<\pi^2p\).
+At \(Y_p=0\) the bare gap \eqref{center} gives \(|V_n-cV_p|>s\),
+where \(c=x/\rho\). The two errors give \(|Y_n|>s/2\), and all six
+lagged rows satisfy \(|Y_j|<2+n/(n-6)+1/4<4\). Finally
+\[
+ J\le\frac{r}{\pi}\left(\sum_{a=1}^{5}\frac{\rho^{a+2}}{a!}
+                        +\frac{21\,\rho^8}{20\cdot6!}\right)<2/5 .
+\]
+The last bound and the head bound follow by substituting
+\(r\rho^m\le(\alpha\cdot16)^m/8800000\), \(n-5\ge91\), and the lower
+bound on \(\pi\). The insertion costs at most \(4Js/n<s/2\).
+
+\paragraph{Exterior \(x\ge3\sqrt p\).}
+Use \(\mathcal H_j,T_j(h),S_j,W\) as in Section~\ref{sec:six}.
+For \(n\ge96\),
+\[
+ rn^7<16,\qquad D_6(n)\le n^6/600,\qquad 6n^7<2^{n-7}.
+\]
+For the first inequality \(\sqrt{95}>487/50\), and the Taylor
+sum through degree 96 at \(3(487/50)\) exceeds \(96^7/16\).
+The function \(y^7e^{-3\sqrt{y-1}}\) decreases for \(y\ge96\)
+since \(9y>14^2\). For the other two inequalities use the decrease of
+\(D_6(n)/n^6\), and check the power-of-two bound at 96, then use
+\((97/96)^7<2\).
+
+For \(h\ge1\), \(j\le n\), coefficient extraction gives
+\(|T_j(h)/h^j-1|\le e^{\mathcal V(n)}-1<1/(6n)\), since
+\(\mathcal V(n)(6n+1)\le 16(6+1/n)/600<1\).
+At \(h=0\) and \(n-7\le j\le n\) use the nonconstant tilt mass at \(2n\).
+Here \(\mathcal V(2n)\le64rn^6/600<1/2\), and \(j!\le n^j\) gives
+\[
+ |T_j(0)|\le 2^{-j}\bigl(e^{\mathcal V(2n)}-1\bigr)
+          \le 2^{-j}(128/600)rn^6<r/(6n).
+\]
+In the modal inequalities proved in Section~\ref{sec:six}, the
+\(p\)-th absolute mass is at most \(4W\), the \(n\)-th at most
+\(nW/2\), and
+\(W/2<|S_n|+(m_p+1)|S_p|\) with \(m_p+1\le n/8\).
+They apply to both indices because \(3\sqrt{n-1}\ge(29/10)\sqrt{n}\).
+The two label bounds then give
+\[
+ |\mathcal H_j-S_j|<W/n\quad(n-7\le j\le p),\qquad
+ |\mathcal H_n-S_n|<W/8 .
+\]
+At \(\mathcal H_p=0\) this implies \(|\mathcal H_n|>W/4\).
+The shorter rows have \(|\mathcal H_j|<2W\) by unimodality of the
+unsigned logistic weights. Their total contribution is at most
+\(2W(21/20)rD_6(n)<W/4\). This proves the strict gap in the exterior.
+
+\paragraph{The first 88 pairs for the independent hard-cutoff proof.}
+The closed analytic intervals meet at \(x=16\) and \(x=3\sqrt p\).
+Together they give \eqref{goal} throughout the five-dimensional cube
+for every \(n\ge96\). The reciprocal and derangement arguments in
+Section~\ref{transport} supply the original root order and simplicity.
+
+For hard cutoff seven and \(8\le n\le95\), compute the two polynomial
+rows independently by choosing the cycle through the smallest label
+and by inserting the largest label. The first method uses the recurrence
+\[
+ E_{n,7}=\sum_{a=7}^{n}\binom{n-1}{a-1}tA_{a-1}(t)E_{n-a,7},
+ \qquad E_{0,7}=1 .
+\]
+The second uses the insertion recurrence for the original rows from
+\cite[Theorem~30]{rr}. Literal permutations check sizes 7, 8 and 9.
+For each pair the certificate places all \(n-3\) lower roots in strictly
+ordered negative dyadic intervals \([a_i,b_i]\), with opposite endpoint
+signs. The upper row takes the same nonzero sign at \(a_i\) and \(b_i\),
+alternating between consecutive intervals. It also has a certified
+opposite sign to the left of the first interval, and its constant term
+has sign opposite to the last bracket sign. Thus its \(n-2\) roots occur
+strictly in the gaps and on both sides of the bracket list.
+The exact degrees exhaust the roots of both rows and prove simplicity.
+The data contain 4,268 lower-root brackets and 88 left-hand points.
+This completes Theorem~\ref{seven}.

@@ -1,5 +1,7 @@
 # Interlacing of excedance polynomials with a minimum cycle length
 
+[Nineteen-page cutoff-seven revision](cutoff-seven/paper/main.pdf) lowers the sufficient cutoff-seven threshold for a shared vector of five independent short-cycle weights from $36{,}000{,}000$ to $96$. It gives an independent all-size proof for the hard cutoff. [Proof, exact arithmetic and verification](cutoff-seven/README.md)
+
 The [seventeen-page revision](cutoff-six/paper/main.pdf) treats the hard
 cutoff six at all upper sizes $n\ge7$ and four independent short-cycle
 weights at upper sizes $n\ge49$. It also gives the explicit sufficient

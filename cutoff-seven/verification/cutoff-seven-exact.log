@@ -1,0 +1,21 @@
+full interval |M7|/height <= 152355739/83886080 < 11/6
+full interval |M7|/exp(-x) <= 1003440476713/962072674304 < 21/20
+r=1/2: |M7|/height=49/27, |M7|/r=196/243
+r=1/11: |M7|/height=2135/1728, |M7|/r=258335/248832
+error: 89497/5000000 on [127/8,128/8]
+drift: 188959247/10000000 on [36/8,37/8]
+phase budget: 246041/1250000 on [36/8,37/8]
+PASS 128 closed cells, all upper ranks n >= 96
+PASS 88 hard-cutoff-seven adjacent pairs at upper size 8..95; 4268 strictly ordered lower-root intervals; two row recurrences, literal permutation enumeration at sizes 7, 8, 9.
+c6b754a9ad9762cc9ba74acd783ce82c38599256625b2d47159d5bef4588788e dyadic-prefix.json
+middle literal paper head / s: 5807879237506302148329/94101417932983398437500 < 0.061719360
+middle tilt cost: outward 0.004555475, strict bound 1/200
+middle doubled-radius exponential: outward 1.411532999, strict bound 2
+middle head / s: outward 0.061691799, strict bound 1/16
+middle tail / s: outward 0.000000001, strict bound 1/1000
+middle drift / s: outward 0.395492920, strict bound 2/5
+middle full shorter-row insertion / s: outward 0.016478872, strict bound 1/2
+exterior n^7 exp(-3 sqrt(n-1)) < 16 for n >= 96
+exterior positive-label relative error < 1/(6n), zero-label < r/(6n)
+exterior positive peak gap > W/4, six-term drift insertion < W/4
+PASS: middle and exterior scalar certificates
