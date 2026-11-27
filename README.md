@@ -119,3 +119,7 @@ for this edition has not yet run.
 See [CITATION.cff](CITATION.cff). The original code is distributed under Apache-2.0.
 [License scope](LICENSE-SCOPE.md) explains the separate manuscript
 rights and the treatment of third-party material.
+
+## Authorship
+
+The tagged releases v1.0.0, v1.1.0, v1.2.0 and v1.3.0 list Bowen Zuo as sole author. They remain unchanged and may be cited as they are. The manuscript prepared for journal submission is joint work of Bowen Zuo and Xiaojuan Luo (corresponding author), both of East China University of Science and Technology.
